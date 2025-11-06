@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私信 - Harmonia Virtuals</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 使用 Inter 字体 */
+        body {
+            font-family: 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- 聊天应用容器 -->
+    <div class="w-full h-screen rounded-none shadow-none border-none md:max-w-xl md:min-h-[600px] md:rounded-lg md:shadow-2xl md:border bg-white overflow-hidden border-gray-200 flex flex-col lg:max-w-2xl">
+        
+        <!-- 头部 -->
+        <header class="bg-white border-b border-gray-200 p-4 flex-shrink-0">
+            <h1 class="text-xl font-bold text-gray-800">与 陈女士 (精英猎头) 的私信</h1>
+        </header>
+        
+        <!-- 聊天区域 -->
+        <main class="p-6 flex-grow overflow-y-auto space-y-6">
+            
+            <!-- 时间戳 -->
+            <div class="text-center text-xs text-gray-500 uppercase">
+                今天 09:15 AM
+            </div>
+
+            <!-- 招聘者消息 (收到的消息) -->
+            <div class="flex items-start space-x-3">
+                <!-- 猎头头像 -->
+                <img 
+                    src="https://placehold.co/100x100/E2E8F0/4A5568?text=HR" 
+                    alt="精英猎头头像" 
+                    class="w-10 h-10 rounded-full flex-shrink-0 border-2 border-gray-300"
+                    onerror="this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=HR'; this.onerror=null;"
+                >
+                <div class="flex flex-col items-start">
+                    <!-- 姓名 -->
+                    <span class="text-sm font-semibold text-gray-700 mb-1">陈女士 (精英猎头)</span>
+                    <!-- 消息气泡 -->
+                    <div class="bg-gray-200 text-gray-900 p-4 rounded-lg rounded-tl-none max-w-xs shadow-md">
+                        <p class="text-base">您好，冒昧联系。我来自Harmonia Virtuals（和谐虚拟）人才发掘部。</p>
+
+                        <p class="text-base mt-2">您在AI系统架构领域的公开贡献给我们留下了极为深刻的印象。Harmonia的领导团队相信，您的经验与我们正在开发的革命性项目高度契合。</p>
+
+                        <p class="text-base mt-2">Harmonia Virtuals是亚洲最具颠覆性的AI巨头。我们正在构建业界第一个真正的AI原生操作系统。这是一个千载难逢的机会，可以真正“设计未来”。</p>
+
+                        <p class="text-base mt-2">我们对这个职位的期望极高，因此也提供了业界绝对顶级的薪酬方案：基准年薪为 10,000,000 元人民币，并附有丰厚的股权激励。</p>
+
+                        <p class="text-base mt-2">不知您是否方便进行一次15分钟的保密通话？</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- 玩家回复选项 (谜题) -->
+        <footer class="bg-gray-50 border-t border-gray-200 p-4 flex-shrink-0">
+            <div class="flex justify-end space-x-2">
+                <!-- 这是玩家的唯一选择，点击将导航到下一个页面（Offer邮件） -->
+                <a 
+                    href="offer_email.html" 
+                    class="bg-blue-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105"
+                >
+                    我非常有兴趣
+                </a>
+                <button 
+                    disabled 
+                    class="bg-gray-300 text-gray-500 font-semibold py-2 px-5 rounded-full cursor-not-allowed"
+                >
+                    暂不考虑
+                </button>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

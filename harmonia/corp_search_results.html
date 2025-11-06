@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果 - Harmonia Virtuals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .header-nav { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <nav class="header-nav fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="corp_homepage.html"><img src="https://placehold.co/120x50/003366/FFFFFF?text=Harmonia&font=montserrat" alt="Logo" class="h-10 w-auto rounded"></a>
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="corp_homepage.html" class="text-gray-600 hover:text-blue-700">首页</a>
+                    <a href="corp_atlas.html" class="text-gray-600 hover:text-blue-700">技术</a>
+                    <a href="corp_about.html" class="text-gray-600 hover:text-blue-700">关于我们</a>
+                    <a href="corp_contact.html" class="text-gray-600 hover:text-blue-700">联系我们</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative">
+                        <input type="search" id="global-search" placeholder="搜索..." class="pl-10 pr-4 py-2 w-48 border border-gray-300 rounded-full">
+                        <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 flex-grow">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h1 class="text-3xl font-bold text-gray-900">搜索结果</h1>
+            <p class="mt-2 text-gray-600">为您找到关于 "<span id="search-query" class="font-semibold"></span>" 的结果：</p>
+            
+            <div id="search-results-container" class="mt-8 space-y-6">
+                <!-- Results will be injected here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-blue-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Harmonia Virtuals Inc. 版权所有。</p>
+            <p class="mt-4"><a href="intranet.html" class="text-blue-300 hover:text-white transition">员工入口</a></p>
+        </div>
+    </footer>
+
+    <script src="corp_script.js"></script>
+</body>
+</html>

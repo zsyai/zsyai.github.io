@@ -1,0 +1,110 @@
+<!-- P.23 "[LOG] 管理员工作台" 内容 -->
+<div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div>
+            <pre class="text-sm text-green-500" style="white-space: pre-wrap; word-break: break-all;">[ &lt; RUNNING //:SYS/DEBUG_MODE ]</pre>
+            <h1 class="text-2xl font-bold text-gray-200 mt-4">管理员工作台</h1>
+            <pre class="text-sm text-green-500 mt-2" style="white-space: pre-wrap; word-break: break-all;">[LOG]: ... Loading dashboard for U:admin_7456</pre>
+        </div>
+
+        <!-- Priority Summary -->
+        <div class="mt-6 text-lg">
+            <p class="log-text">您有 <strong class="font-bold text-red-600 log-warning">3</strong> 个高优先级工单 和 <strong class="font-bold text-gray-900 log-text">177</strong> 个常规工单待处理。</p>
+        </div>
+
+        <hr class="my-6 border-gray-200 log-border">
+
+        <!-- High Priority Tickets -->
+        <div>
+            <h2 class="text-2xl font-semibold mb-5 text-gray-800 log-text">高优先级工单</h2>
+            
+            <div class="space-y-6 mb-8">
+                <!-- Ticket 1 (Updated) -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-red-200 log-bg log-border-red">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 log-bg-red-100 log-text-red-800">
+                            <svg class="w-2.5 h-2.5 mr-1.5" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                            紧急
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 log-text mb-2">修复 Base64 公共搜索漏洞</h3>
+                    <div class="text-sm text-gray-600 log-text space-y-1">
+                        <p><strong class="font-medium text-gray-800 log-text">状态：</strong>进行中</p>
+                        <p><strong class="font-medium text-gray-800 log-text">描述：</strong>GlitchInTheMatrix 报告了公网索引漏洞。内部文件（包括工单和薪酬文件）已被暴露。</p>
+                        <p><strong class="font-medium text-gray-800 log-text">行动：</strong><span class="font-medium text-red-700 log-warning">必须立即修复索引器。</span></p>
+                    </div>
+                </div>
+
+                <!-- Ticket 2 (Updated) -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-red-200 log-bg log-border-red">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 log-bg-red-100 log-text-red-800">
+                            <svg class="w-2.5 h-2.5 mr-1.5" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                            紧急
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 log-text mb-2">MindLink Outlier 协议响应失败</h3>
+                    <div class="text-sm text-gray-600 log-text space-y-1">
+                        <p><strong class="font-medium text-gray-800 log-text">状态：</strong>进行中</p>
+                        <p><strong class="font-medium text-gray-800 log-text">描述：：</strong>Subject 02-A (E. Reed) 在 MindLink 中抵抗“集成”。手动覆盖协议未能触发。</p>
+                        <p><strong class="font-medium text-gray-800 log-text">行动：</strong><span class="font-medium text-red-700 log-warning">调查协议失败原因。</span></p>
+                    </div>
+                </div>
+
+                <!-- Ticket 3 (Updated) -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-yellow-200 log-bg log-border-yellow">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 log-bg-yellow-100 log-text-yellow-800">
+                            <svg class="w-2.5 h-2.5 mr-1.5" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                            警告
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 log-text mb-2">S.Chen 永久休假流程的后续核查</h3>
+                    <div class="text-sm text-gray-600 log-text space-y-1">
+                        <p><strong class="font-medium text-gray-800 log-text">状态：</strong>待处理</p>
+                        <p><strong class="font-medium text-gray-800 log-text">描述：</strong>Subject S.Chen 的永久休假流程已高效完成。然而，由于其认知资产的集成深度极高，常规的垃圾回收协议标记了一个低概率异常。在内部系统中 <em>可能</em> 存在认知碎片残留。</p>
+                        <p><strong class="font-medium text-gray-800 log-text">行动：：</strong><span class="font-medium text-yellow-700 log-warning">启动一次全面的系统自检。</span></p>
+                    </div>
+                </div>
+            </div>
+
+        <hr class="my-6 border-gray-200 log-border">
+
+        <h2 class="text-2xl font-semibold mb-5 text-gray-800 log-text">常规工单队列</h2>
+
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden log-bg log-border">
+            <ul class="divide-y divide-gray-200 log-divide-gray">
+                <li class="p-4 flex items-center gap-3 flex-wrap">
+                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-300 log-bg-gray-100 log-text-gray-700">[ ⬜️ 普通 ]</span>
+                    <span class="text-sm font-medium text-gray-500 log-text-gray-500">[BUG]</span>
+                    <span class="text-sm text-gray-800 log-text">食堂营养液订单模块API 404</span>
+                </li>
+                <li class="p-4 flex items-center gap-3 flex-wrap">
+                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-300 log-bg-gray-100 log-text-gray-700">[ ⬜️ 普通 ]</span>
+                    <span class="text-sm font-medium text-blue-500 log-text-blue-500">[FEATURE]</span>
+                    <span class="text-sm text-gray-800 log-text">新版渲染器闪烁</span>
+                </li>
+                <li class="p-4 flex items-center gap-3 flex-wrap">
+                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-300 log-bg-gray-100 log-text-gray-700">[ ⬜️ 普通 ]</span>
+                    <span class="text-sm font-medium text-gray-500 log-text-gray-500">[BUG]</span>
+                    <span class="text-sm text-gray-800 log-text">打印机驱动程序冲突</span>
+                </li>
+                <li class="p-4 flex items-center gap-3 flex-wrap">
+                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-300 log-bg-gray-100 log-text-gray-700">[ ⬜️ 普通 ]</span>
+                    <span class="text-sm font-medium text-gray-500 log-text-gray-500">[BUG]</span>
+                    <span class="text-sm text-gray-800 log-text">VPN 路由表刷新延迟</span>
+                </li>
+                <li class="p-4 flex items-center gap-3 flex-wrap">
+                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-300 log-bg-gray-100 log-text-gray-700">[ ⬜️ 普通 ]</span>
+                    <span class="text-sm text-gray-400 log-text">... ...</span>
+                </li>
+            </ul>
+            <!-- Pagination -->
+            <div class="p-4 border-t border-gray-200 flex justify-between items-center text-sm text-gray-600 log-border-t log-text">
+                <span class="px-3 py-1 rounded-md border border-gray-300 bg-gray-100 text-gray-400 cursor-not-allowed log-border log-bg-gray-100 log-text-gray-400">[ < 上一页 ]</span>
+                <span class="font-medium">第 1 页 / 共 50 页</span>
+                <span class="px-3 py-1 rounded-md border border-gray-300 bg-white hover:bg-gray-50 cursor-pointer log-border log-bg log-hover-bg">[ 下一页 > ]</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点 H-08 原始数据流</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Roboto Mono (用于终端显示) 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght @400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #000;
+            color: #00FF00; /* 亮绿色 */
+        }
+        
+        /* 模拟终端闪烁光标 */
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .cursor-blink::after {
+            content: '█';
+            animation: blink-cursor 1s step-end infinite;
+            margin-left: 4px;
+        }
+
+        /* 模拟会话终止后的淡出效果 */
+        #session-terminated {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div id="log-container" class="max-w-4xl mx-auto space-y-2 text-sm md:text-base">
+        
+        <p class="text-green-400">[ &lt; 连接已建立: 节点 H-08 ]</p>
+        
+        <p class="mt-4 text-white font-bold">[ 系统日志 ] 节点 H-08 原始数据流</p>
+        
+        <p class="text-green-300">[信息]: 节点 H-08 状态: <span class="text-green-400 font-bold">在线 (隐藏模式)</span></p>
+        <p class="text-green-300">[信息]: 伪装为: STANDARD_STORAGE_UNIT (标准存储单元)</p>
+        <p class="text-yellow-400">[警告]: 真实身份: <span class="text-yellow-200 font-bold">NEXUS_MASTER_HIVE (Nexus 主巢)</span></p>
+
+        <div class="pt-4 mt-4 border-t border-green-900/50">
+            <h3 class="text-white mb-2">当前驻留意识</h3>
+            <div class="pl-4">
+                <p>主体: S.Chen</p>
+                <p>来源 ID: EMP-0994</p>
+                <p>状态:</p>
+                <div class="pl-4 text-green-300">
+                    <p>[ 集成 ]: <span class="text-green-400 font-bold">已完成 (100%)</span></p>
+                    <p>[ 抵抗 ]: 0.0% (已停止)</p>
+                    <p>[ 当前进程 ]: 等待“最终清除”</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-4 mt-4 border-t border-green-900/50">
+            <h3 class="text-white mb-2">硬件信息</h3>
+            <div class="pl-4">
+                <p>物理位置: B4-L3-ZONE-H-08</p>
+                <p>服务器类型: Quantum Cognitive Core (Mk. IV)</p>
+                <p class="text-white">数字核心识别码: <span class="bg-green-300 text-black p-1 rounded-sm font-bold">NEXUS-CORE-001</span></p>
+                
+                <p class="mt-4 text-red-500 font-bold">[ 警告 ]: <span class="text-red-400">请勿手动断电。存在所有已集成主体意识永久丢失的风险。</span></p>
+            </div>
+        </div>
+
+        <div class="pt-6">
+            <p class="text-gray-500">(连接自动终止中...)</p>
+            <p id="session-terminated" class="text-red-600 font-bold">[ 会话已被主机终止 ]</p>
+            
+            <!-- 新增的返回链接 -->
+            <p id="return-link" class="mt-4" style="display: none;">
+                <a href="intranet.html#file_browser" class="text-blue-400 hover:underline hover:text-blue-300">
+                    &gt; 返回文件浏览器
+                </a>
+            </p>
+        </div>
+
+        <div id="cursor-element" class="h-8">
+            <!-- 终止后光标停止闪烁 -->
+        </div>
+    </div>
+
+    <script>
+        const logContainer = document.getElementById('log-container');
+        const sessionTerminated = document.getElementById('session-terminated');
+        const cursorElement = document.getElementById('cursor-element');
+        const returnLink = document.getElementById('return-link'); // 获取新链接
+
+        // 启动时，光标闪烁
+        cursorElement.classList.add('cursor-blink');
+
+        // 模拟连接在几秒后终止
+        setTimeout(() => {
+            // 显示终止信息
+            sessionTerminated.style.opacity = '1';
+
+            // 显示返回链接
+            returnLink.style.display = 'block';
+
+            // 停止光标闪烁
+            cursorElement.classList.remove('cursor-blink');
+            cursorElement.innerHTML = "█"; // 显示一个静态光标
+        }, 3000); // 3秒后终止会话
+
+        // 自动滚动到底部（如果内容溢出）
+        window.scrollTo(0, document.body.scrollHeight);
+    </script>
+
+</body>
+</html>
