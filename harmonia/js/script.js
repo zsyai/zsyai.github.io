@@ -64,8 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             day: { url: 'content_post_bug_report_day.html', title: '帖子详情' },
                             night: { url: 'content_post_bug_report_night.html', title: '帖子详情' }
                         },
-                                'admin_tools': { url: 'content_admin_tools.html', title: '管理员工具' },
-                                'encrypted_communication': { url: 'content_encrypted_communication.html', title: '加密通讯' },                        'file_browser': { url: 'content_file_browser.html', title: '系统文件浏览器' },
+                                'admin_tools': {
+        day: { url: 'content_admin_tools_day.html', title: '管理员工具' },
+        night: { url: 'content_admin_tools_night.html', title: '[LOG] 管理员工具' }
+    },
+                                'encrypted_communication': {
+                                    day: { url: 'content_encrypted_communication_day.html', title: '加密通讯' },
+                                    night: { url: 'content_encrypted_communication_night.html', title: '加密通讯' }
+                                },
+                                'file_browser': {
+                                    day: { url: 'content_file_browser_day.html', title: '系统文件浏览器' },
+                                    night: { url: 'content_file_browser_night.html', title: '系统文件浏览器' }
+                                },
                         'search_results': { url: 'content_search_results.html', title: '搜索结果' },
                         'purchase_order': { url: 'content_purchase_order.html', title: '采购单' },
                         'sys_map_view_qzone_7456': {
@@ -355,6 +365,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 // Initial drawing of separators
                 Renderers.updateSeparatorLines();
+                const switchToNightModeButtonEncryptedComm = document.getElementById('switch-to-night-mode-button-encrypted-comm');
+                if (switchToNightModeButtonEncryptedComm) {
+                    switchToNightModeButtonEncryptedComm.addEventListener('click', () => {
+                        state.isNight = true;
+                        localStorage.setItem('nightModeActive', 'true');
+                        loadContent(window.location.hash.substring(1) || 'home');
+                    });
+                }
             } else if (pageName === 'admin_tools') {
                 const emergencyLink = document.getElementById('emergency-broadcast-link');
                 if (emergencyLink && localStorage.getItem('fragmentChatUnlocked') === 'true') {
@@ -365,6 +383,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (modal) {
                             modal.classList.remove('hidden');
                         }
+                    });
+                }
+                const switchToNightModeButton = document.getElementById('switch-to-night-mode-button');
+                if (switchToNightModeButton) {
+                    switchToNightModeButton.addEventListener('click', () => {
+                        state.isNight = true;
+                        localStorage.setItem('nightModeActive', 'true');
+                        loadContent(window.location.hash.substring(1) || 'home');
                     });
                 }
             } else if (pageName === 'file_browser') {
@@ -398,7 +424,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 // Initial drawing of separators
                 Renderers.updateSeparatorLines();
-            } else if (pageName === 'sys_map_view_qzone_7456') {
+                const switchToNightModeButtonFileBrowser = document.getElementById('switch-to-night-mode-button-file-browser');
+                if (switchToNightModeButtonFileBrowser) {
+                    switchToNightModeButtonFileBrowser.addEventListener('click', () => {
+                        state.isNight = true;
+                        localStorage.setItem('nightModeActive', 'true');
+                        loadContent(window.location.hash.substring(1) || 'home');
+                    });
+                }
+			} else if (pageName === 'sys_map_view_qzone_7456') {
                 const h08DayLink = document.getElementById('h08-day-link');
                 if (h08DayLink) {
                     h08DayLink.addEventListener('click', (event) => {
