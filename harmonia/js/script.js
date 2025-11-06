@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             localStorage.setItem('nightModeActive', 'false');
                         }
                         loadContent(window.location.hash.substring(1) || 'home');
-                        UI.showToast(this.checked ? '设置已保存：调试模式已启用' : '设置已保存：调试模式已禁用', this.checked ? 'green' : 'gray');
+                        UI.showToast(this.checked ? '调试模式已启用，亮度调节功能已解锁' : '调试模式已禁用', this.checked ? 'green' : 'gray');
                     });
                 }
 
