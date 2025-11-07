@@ -47,13 +47,101 @@ document.addEventListener('DOMContentLoaded', () => {
                 const resultElement = document.createElement('div');
                 resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
                                     resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="intranet.html#it_ticket_8841">IT支持工单 #8841：密码重置请求</a></h2>
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="it_ticket_8841.html">IT支持工单 #8841：密码重置请求</a></h2>
                                         <p class="mt-2 text-gray-600">用户 <strong>admin_7456</strong> 提交的密码重置请求...</p>
                                         <div class="mt-3 text-sm text-gray-500">
                                             <span>类型: IT支持</span>
                                         </div>
                                     `;                resultsContainer.appendChild(resultElement);
-            } else if (query === '冷却系统') {
+            } else if (query.includes('Atlas')) {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_atlas.html">Atlas 项目：核心技术</a></h2>
+                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的核心技术，<strong>Atlas</strong> 项目...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 公司技术</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query.includes('关于')) {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">关于我们 - Harmonia Virtuals</a></h2>
+                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的愿景、使命和团队...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 公司信息</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query.includes('地址')) {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_contact.html">联系我们 - Harmonia Virtuals</a></h2>
+                                        <p class="mt-2 text-gray-600">查找 Harmonia Virtuals 的办公<strong>地址</strong>和联系方式...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 联系信息</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query === '李明' || query === 'Li Ming') {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">团队成员：李明</a></h2>
+                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的团队成员 <strong>李明</strong>...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 公司信息</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query.includes('伊芙琳') || query.includes('里德') || query.includes('Evelyn') || query.includes('Reed')) {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">团队成员：伊芙琳·里德</a></h2>
+                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的团队成员 <strong>伊芙琳·里德</strong>...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 公司信息</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query.includes('马库斯') || query.includes('凯勒') || query === 'Marcus Keller') {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">团队成员：马库斯·凯勒</a></h2>
+                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的团队成员 <strong>马库斯·凯勒</strong>...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 公司信息</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query === 'Y29uZmlkZW50aWFs') {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-gray-500">内部机密文件（已屏蔽）</h2>
+                                        <p class="mt-2 text-gray-600">此文件为内部机密，无法查看。</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 机密文件</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query.includes('MindLink')) {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                resultElement.innerHTML = `
+                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_atlas.html">MindLink 技术：连接未来</a></h2>
+                                        <p class="mt-2 text-gray-600">探索 Harmonia Virtuals 的创新 <strong>MindLink</strong> 技术...</p>
+                                        <div class="mt-3 text-sm text-gray-500">
+                                            <span>类型: 公司技术</span>
+                                        </div>
+                                    `;
+                resultsContainer.appendChild(resultElement);
+            } else if (query === '冷却系统' || query === '5Ya35Y2057O757uf') {
                  const resultElement = document.createElement('div');
                 resultElement.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200';
                                     resultElement.innerHTML = `
