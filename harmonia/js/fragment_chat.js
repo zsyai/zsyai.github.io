@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         textInput.disabled = true;
         verifyButton.disabled = true;
 
-        if (answer === '孤独') {
+        if (answer.includes('孤独')) {
             localStorage.setItem('fragmentChatUnlocked', 'true');
             inputArea.style.display = 'none';
             
