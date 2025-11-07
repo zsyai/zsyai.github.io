@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结局 ? : 热心市民</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 默认使用 Inter 字体，用于 UI */
+        body {
+            font-family: 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+        }
+        /* GDD: "一种轻松、欢快的内心独白字体"
+          我们使用一种衬线字体 (serif) 并设为斜体，以区别于系统的 UI 字体
+        */
+        .font-monologue {
+            font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
+        }
+        /* 终端字体 */
+        .font-mono {
+            font-family: 'Courier New', 'Courier', 'monospace';
+        }
+
+        /* 用于 JS 逐行淡入的辅助类 */
+        .fade-in-item {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-8">
+
+    <!-- 
+      GDD: "瞬间切回极其明亮、欢快的“白天模式”"
+      我们使用一个白色的卡片，模拟一个专业的系统弹窗。
+    -->
+    <div class="w-full max-w-2xl bg-white p-10 md:p-12 rounded-lg shadow-2xl text-center">
+
+        <!-- 1. 系统反馈 -->
+        <div id="system-feedback">
+            <!-- GDD: "大大的绿色对勾 ✅" -->
+            <div id="item-1" class="fade-in-item text-8xl mb-6">✅</div>
+            
+            <h1 id="item-2" class="fade-in-item text-3xl font-bold text-green-600 mb-4">
+                操作成功！
+            </h1>
+            
+            <div id="item-3" class="fade-in-item text-gray-600 font-mono text-sm bg-gray-50 p-3 rounded-md">
+                <p>已删除： 紧急广播工具</p>
+            </div>
+        </div>
+
+        <!-- 2. 内心独白 -->
+        <div id="monologue" class="mt-8 pt-8 border-t border-gray-200 text-left space-y-4">
+            
+            <p id="item-4" class="fade-in-item font-monologue italic text-gray-700 text-lg">
+                搞定！
+            </p>
+            <p id="item-5" class="fade-in-item font-monologue italic text-gray-700 text-lg">
+                刚入职就发现内网里堆满了前员工留下的奇怪测试数据（什么“主巢”、“救命”之类的中二病文案）。安全系统也浑身是漏洞，这公司怎么回事儿？
+            </p>
+            <p id="item-6" class="fade-in-item font-monologue italic text-gray-700 text-lg">
+                作为一个拿千万年薪的专业人士，眼里怎么能容得下这些脏东西？
+            </p>
+            <p id="item-7" class="fade-in-item font-monologue italic text-gray-700 text-lg">
+                果断修好了！
+            </p>
+            <p id="item-8" class="fade-in-item font-monologue italic text-gray-700 text-lg">
+                同事哥，不用谢。
+            </p>
+            
+        </div>
+        
+        <!-- 3. 结局 -->
+        <div id="resolution" class="mt-8 pt-8 border-t border-gray-200 space-y-6">
+            
+            <!-- HR 消息 -->
+            <div id="item-9" class="fade-in-item p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-left">
+                <p class="font-semibold">HR：</p>
+                <p>“您出色的工作能力令人惊叹！已为您申请奖金和特殊福利！——您问admin_7456的近况？不好意思，我无可奉告。”</p>
+            </div>
+
+            <!-- 结局标题 -->
+            <div id="item-10" class="fade-in-item mt-8">
+                <p class="text-2xl font-bold text-gray-800 font-mono">
+                    结局 ? : 热心同事
+                </p>
+            </div>
+
+            <!-- 成就 -->
+            <div id="item-11" class="fade-in-item mt-4">
+                <p class="text-lg font-bold text-yellow-500 animate-pulse">
+                    （恭喜你发现了这个隐藏结局！）
+                </p>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <script>
+        // 辅助函数：模拟延迟
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // 辅助函数：淡入元素
+        const fadeIn = (id, delay) => {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.style.opacity = '1';
+                    }
+                    resolve();
+                }, delay);
+            });
+        };
+
+        // 异步函数来执行结局序列
+        async function runEndingSequence() {
+            // 按顺序淡入所有元素，营造喜剧节奏
+            await fadeIn('item-1', 500);  // ✅
+            await fadeIn('item-2', 500);  // 操作成功！
+            await fadeIn('item-3', 300);  // 详情
+            
+            await fadeIn('item-4', 1500); // 搞定！
+            await fadeIn('item-5', 1000); // 刚入职...
+            await fadeIn('item-6', 1000); // 作为一个...
+            await fadeIn('item-7', 1000); // 感觉...
+            await fadeIn('item-8', 500);  // 顺手...
+            
+            await fadeIn('item-9', 2000);  // HR 消息
+            await fadeIn('item-10', 1000); // 结局标题
+            await fadeIn('item-11', 1000); // 成就
+        }
+
+        // 页面加载完成后启动序列
+        window.onload = runEndingSequence;
+    </script>
+
+</body>
+</html>
