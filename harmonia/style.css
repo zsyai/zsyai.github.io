@@ -325,4 +325,6 @@ body.night-mode {
     .chat-window { width: 98vw; height: 95vh; }
     .final-submit-button { font-size: 1.2rem; padding: 15px 20px; }
     .ending-text { font-size: 1.1rem; max-width: 90vw; }
-}
+}.night-mode .rack-detail-button-h08,
+.night-mode .rack-detail-button-q04 { color: black !important; }
+.night-mode #access-denied-modal p { color: white; }

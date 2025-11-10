@@ -118,9 +118,6 @@
                 <!-- Content will be loaded here by JavaScript -->
             </div>
         </main>
-    </div>
-
-    <script src="js/script.js"></script>
 
     <div id="access-denied-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
         <div class="bg-white rounded-lg p-8 max-w-sm w-full text-center shadow-xl night-mode:bg-gray-800 night-mode:border night-mode:border-red-700">
@@ -151,5 +148,20 @@
         </div>
     </div>
 
-</body>
+        <!-- Rack Info Modal -->
+        <div id="rack-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+            <div class="bg-[#0c0c0c] border border-green-700 rounded-sm shadow-lg p-6 w-full max-w-md night-mode-text">
+                <div class="flex justify-between items-center border-b border-green-900/50 pb-3 mb-4">
+                    <h3 id="modal-title" class="text-lg font-bold text-green-400">机架详情</h3>
+                    <button id="close-modal" class="text-green-400 hover:text-green-200 text-2xl leading-none">&times;</button>
+                </div>
+                <div id="modal-content" class="text-green-300 space-y-2">
+                    <!-- Content will be injected here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
 </html>
+
