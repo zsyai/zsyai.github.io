@@ -62,7 +62,7 @@
         
         <!-- 玩家回复选项 (谜题) -->
         <footer class="bg-gray-50 border-t border-gray-200 p-4 flex-shrink-0">
-            <div class="flex justify-end space-x-2">
+            <div id="button-container" class="flex justify-end space-x-2">
                 <!-- 这是玩家的唯一选择，点击将导航到下一个页面（Offer邮件） -->
                 <a 
                     href="offer_email.html" 
@@ -71,8 +71,7 @@
                     我非常有兴趣
                 </a>
                 <a 
-                    id="reject-offer-btn"
-                    href="ending_anti_fraud.html" 
+                    href="index.html" 
                     class="bg-gray-300 text-gray-700 font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105"
                 >
                     暂不考虑
@@ -84,14 +83,19 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const rejectButton = document.getElementById('reject-offer-btn');
             // 检查玩家是否已经通过关
             if (localStorage.getItem('hasCompletedGame') === 'true') {
-                // 如果是， “暂不考虑” 按钮会通往一个隐藏的 “反诈” 结局
-                rejectButton.href = 'ending_anti_fraud.html';
-            } else {
-                // 如果是初次游玩，“暂不考虑” 会直接返回游戏标题页
-                rejectButton.href = 'index.html';
+                const buttonContainer = document.getElementById('button-container');
+                
+                // 创建 “举报” 按钮
+                const reportButton = document.createElement('a');
+                reportButton.href = 'ending_anti_fraud.html';
+                reportButton.textContent = '举报';
+                // A more alarming style for the report button
+                reportButton.className = 'bg-red-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105';
+                
+                // 将新按钮添加到容器中
+                buttonContainer.appendChild(reportButton);
             }
         });
     </script>
