@@ -70,16 +70,31 @@
                 >
                     我非常有兴趣
                 </a>
-                <button 
-                    disabled 
-                    class="bg-gray-300 text-gray-500 font-semibold py-2 px-5 rounded-full cursor-not-allowed"
+                <a 
+                    id="reject-offer-btn"
+                    href="ending_anti_fraud.html" 
+                    class="bg-gray-300 text-gray-700 font-semibold py-2 px-5 rounded-full shadow-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105"
                 >
                     暂不考虑
-                </button>
+                </a>
             </div>
         </footer>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rejectButton = document.getElementById('reject-offer-btn');
+            // 检查玩家是否已经通过关
+            if (localStorage.getItem('hasCompletedGame') === 'true') {
+                // 如果是， “暂不考虑” 按钮会通往一个隐藏的 “反诈” 结局
+                rejectButton.href = 'ending_anti_fraud.html';
+            } else {
+                // 如果是初次游玩，“暂不考虑” 会直接返回游戏标题页
+                rejectButton.href = 'index.html';
+            }
+        });
+    </script>
 
 </body>
 </html>
