@@ -490,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       if (!rack) return;
 
                       // In night mode, H-08 is a direct link. Let it navigate normally.
-                      if (rack.getAttribute('href').includes('quarantine_log')) {
+                      if (rack.hasAttribute('href') && rack.getAttribute('href').includes('quarantine_log')) {
                           return;
                       }
                       
