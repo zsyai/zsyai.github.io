@@ -24,7 +24,6 @@
         <!-- 移动端汉堡菜单按钮 (默认隐藏, JS控制显示) -->
         <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-30 p-2 bg-white rounded-md shadow-md">
             <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
         </button>
 
         <!-- 左侧导航栏 (父框架) -->
@@ -98,13 +97,13 @@
 
                 <div class="flex items-center gap-4">
                     <!-- 日夜模式切换 (P18 激活) -->
-                    <button id="mode-toggle-button" class="p-2 rounded-full text-gray-500" title="调试模式已禁用">
+                    <button id="mode-toggle-button" class="p-2 rounded-full" title="调试模式已禁用">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                     </button>
 
                     <!-- 用户信息 -->
                     <div class="flex items-center gap-3">
-                        <img id="user-avatar" src="https://placehold.co/40x40/e0e7ff/4f46e5?text=H" alt="用户头像" class="w-10 h-10 rounded-full border-2 border-blue-100">
+                        <img id="user-avatar" src="images/avatar_user_default.svg" alt="用户头像" class="w-10 h-10 rounded-full border-2 border-blue-100">
                         <div>
                             <div id="username-display" class="font-medium text-sm">Harmonia Virtuals 员工</div>
                             <div id="user-level-display" class="text-xs text-gray-500">Lv.1 (initiate)</div>

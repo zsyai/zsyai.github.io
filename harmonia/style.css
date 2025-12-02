@@ -328,3 +328,12 @@ body.night-mode {
 }.night-mode .rack-detail-button-h08,
 .night-mode .rack-detail-button-q04 { color: black !important; }
 .night-mode #access-denied-modal p { color: white; }
+
+/* Fix for Day/Night Toggle Button in Day Mode */
+#mode-toggle-button {
+    color: #4b5563; /* text-gray-600 */
+    background-color: transparent;
+}
+#mode-toggle-button:hover {
+    background-color: #f3f4f6; /* bg-gray-100 */
+}

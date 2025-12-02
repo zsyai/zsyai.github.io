@@ -160,12 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
               
               if (userAvatarEl) {
                   if (state.currentUser === 'admin_7456') {
-                      userAvatarEl.src = "https://placehold.co/40x40/ffefdb/b45309?text=A";
+                      userAvatarEl.src = "images/avatar_user_admin.svg";
                       userAvatarEl.alt = "Admin 头像";
                       userAvatarEl.classList.remove('border-blue-100');
                       userAvatarEl.classList.add('border-orange-200');
                   } else {
-                      userAvatarEl.src = "https://placehold.co/40x40/e0e7ff/4f46e5?text=H";
+                      userAvatarEl.src = "images/avatar_user_default.svg";
                       userAvatarEl.alt = "用户头像";
                       userAvatarEl.classList.remove('border-orange-200');
                       userAvatarEl.classList.add('border-blue-100');
@@ -289,13 +289,11 @@ document.addEventListener('DOMContentLoaded', () => {
           handleMenuToggle: () => {
               const sidebar = document.getElementById('sidebar');
               const overlay = document.getElementById('sidebar-overlay');
-              const openIcon = document.getElementById('menu-open-icon');
-              const closeIcon = document.getElementById('menu-close-icon');
+              const menuToggle = document.getElementById('menu-toggle');
               sidebar.classList.toggle('-translate-x-full');
               sidebar.classList.toggle('hidden');
               overlay.classList.toggle('hidden');
-              openIcon.classList.toggle('hidden');
-              closeIcon.classList.toggle('hidden');
+              if (menuToggle) menuToggle.classList.toggle('hidden');
           },
           initPageSpecificListeners: (pageName) => {
               // This function now attaches listeners for content inside #content-area
