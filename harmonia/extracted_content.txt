@@ -30,7 +30,7 @@ NEXUS-CORE-001
 ==================================================
 
 页面编号：2
-页面名称：P39A_Dead_End.html (其他页面)
+页面名称：P39A_Dead_End.html (访问拒绝/死胡同页面)
 页面文字内容：
 访问被拒绝
 [ 警告 ]
@@ -47,7 +47,7 @@ ERR_PHYSICAL_ISOLATION
 ==================================================
 
 页面编号：3
-页面名称：author_postscript.html (论坛帖子详情)
+页面名称：author_postscript.html (作者后记/开发人员说明)
 页面文字内容：
 作者后记
 作者后记
@@ -97,7 +97,7 @@ New
 ==================================================
 
 页面编号：6
-页面名称：content_base64_vulnerability_night.html (其他页面)
+页面名称：content_base64_vulnerability_night.html (安全漏洞详情页面)
 页面文字内容：
 返回 IT支持中心
 进行中
@@ -688,7 +688,7 @@ IT支持中心
 ==================================================
 
 页面编号：25
-页面名称：content_it_ticket_8841.html (工单详情页面)
+页面名称：content_it_ticket_8841.html (IT工单详情 (日间片段))
 页面文字内容：
 返回 IT支持中心
 已解决
@@ -710,7 +710,7 @@ IT管理员
 ==================================================
 
 页面编号：26
-页面名称：content_it_ticket_8841_night.html (工单详情页面)
+页面名称：content_it_ticket_8841_night.html (IT工单详情 (夜间片段))
 页面文字内容：
 返回 IT支持中心
 已解决
@@ -732,7 +732,7 @@ IT管理员
 ==================================================
 
 页面编号：27
-页面名称：content_post_art_contest.html (论坛帖子详情)
+页面名称：content_post_art_contest.html (论坛帖子：AI艺术比赛 (日间))
 页面文字内容：
 返回 社区中心
 比赛
@@ -776,7 +776,7 @@ S.Chen又获奖了？不愧是“思想贡献奖” 得主...（话说S.Chen最�
 ==================================================
 
 页面编号：28
-页面名称：content_post_art_contest_admin_night.html (论坛帖子详情)
+页面名称：content_post_art_contest_admin_night.html (论坛帖子：AI艺术比赛 (管理员夜间))
 页面文字内容：
 返回 社区中心
 比赛
@@ -820,7 +820,7 @@ S.Chen又获奖了？不愧是“思想贡献奖” 得主...（话说S.Chen最�
 ==================================================
 
 页面编号：29
-页面名称：content_post_art_contest_night.html (论坛帖子详情)
+页面名称：content_post_art_contest_night.html (论坛帖子：AI艺术比赛 (夜间))
 页面文字内容：
 返回 社区中心
 [ < RUNNING //:SYS/DEBUG_MODE/RENDERER_v1.9 ]
@@ -831,7 +831,7 @@ S.Chen又获奖了？不愧是“思想贡献奖” 得主...（话说S.Chen最�
 ==================================================
 
 页面编号：30
-页面名称：content_post_award.html (论坛帖子详情)
+页面名称：content_post_award.html (论坛帖子：思想贡献奖 (日间))
 页面文字内容：
 返回 社区中心
 公告
@@ -869,7 +869,7 @@ NetNomad
 ==================================================
 
 页面编号：31
-页面名称：content_post_award_admin_night.html (论坛帖子详情)
+页面名称：content_post_award_admin_night.html (论坛帖子：思想贡献奖 (管理员夜间))
 页面文字内容：
 返回 社区中心
 [ < RUNNING //:SYS/DEBUG_MODE/RENDERER_v1.9 ]
@@ -894,7 +894,7 @@ Purge Date (Scheduled): [T-Minus 48:00:00]
 ==================================================
 
 页面编号：32
-页面名称：content_post_award_night.html (论坛帖子详情)
+页面名称：content_post_award_night.html (论坛帖子：思想贡献奖 (夜间))
 页面文字内容：
 返回 社区中心
 [ < RUNNING //:SYS/DEBUG_MODE/RENDERER_v1.9 ]
@@ -905,7 +905,7 @@ Purge Date (Scheduled): [T-Minus 48:00:00]
 ==================================================
 
 页面编号：33
-页面名称：content_post_bug_report_day.html (论坛帖子详情)
+页面名称：content_post_bug_report_day.html (论坛帖子：渲染Bug报告 (日间))
 页面文字内容：
 返回 IT支持中心
 进行中
@@ -935,7 +935,7 @@ IT部正在跟进。
 ==================================================
 
 页面编号：34
-页面名称：content_post_bug_report_night.html (论坛帖子详情)
+页面名称：content_post_bug_report_night.html (论坛帖子：渲染Bug报告 (夜间))
 页面文字内容：
 返回 IT支持中心
 进行中
@@ -965,7 +965,7 @@ IT部正在跟进。
 ==================================================
 
 页面编号：35
-页面名称：content_post_dark_mode_joke.html (论坛帖子详情)
+页面名称：content_post_dark_mode_joke.html (论坛帖子：黑夜模式笑话 (日间))
 页面文字内容：
 返回 社区中心
 闲聊
@@ -987,7 +987,7 @@ AtlasFanboy
 ==================================================
 
 页面编号：36
-页面名称：content_post_dark_mode_joke_night.html (论坛帖子详情)
+页面名称：content_post_dark_mode_joke_night.html (论坛帖子：黑夜模式笑话 (夜间))
 页面文字内容：
 返回 社区中心
 闲聊
@@ -1009,7 +1009,7 @@ AtlasFanboy
 ==================================================
 
 页面编号：37
-页面名称：content_post_mindlink_day.html (论坛帖子详情)
+页面名称：content_post_mindlink_day.html (论坛帖子：MindLink体验 (日间))
 页面文字内容：
 返回 社区中心
 讨论
@@ -1057,7 +1057,7 @@ CodeWizard
 ==================================================
 
 页面编号：38
-页面名称：content_post_mindlink_night.html (论坛帖子详情)
+页面名称：content_post_mindlink_night.html (论坛帖子：MindLink体验 (夜间))
 页面文字内容：
 返回 社区中心
 [ < RUNNING //:SYS/DEBUG_MODE/RENDERER_v1.9 ]
@@ -1082,7 +1082,7 @@ CodeWizard
 ==================================================
 
 页面编号：39
-页面名称：content_post_philosophy.html (论坛帖子详情)
+页面名称：content_post_philosophy.html (论坛帖子：人类Bug哲学 (日间))
 页面文字内容：
 返回 社区中心
 哲学
@@ -1131,7 +1131,7 @@ GlitchInTheMatrix
 ==================================================
 
 页面编号：40
-页面名称：content_post_philosophy_night.html (论坛帖子详情)
+页面名称：content_post_philosophy_night.html (论坛帖子：人类Bug哲学 (夜间))
 页面文字内容：
 返回 社区中心
 哲学
@@ -1272,7 +1272,7 @@ GlitchInTheMatrix
 ==================================================
 
 页面编号：45
-页面名称：content_purchase_order.html (采购订单页面)
+页面名称：content_purchase_order.html (内网采购订单详情 (内容片段))
 页面文字内容：
 采购单: P.O. 88Z
 项目
@@ -1477,7 +1477,7 @@ Q区 (Quarantine)
 ==================================================
 
 页面编号：48
-页面名称：content_search_results.html (搜索结果页面)
+页面名称：content_search_results.html (内网搜索结果页面)
 页面文字内容：
 搜索结果
 为您找到 1 个相关结果：
@@ -1652,7 +1652,7 @@ Quantum Dynamics
 ==================================================
 
 页面编号：53
-页面名称：corp_search_results.html (搜索结果页面)
+页面名称：corp_search_results.html (官网搜索结果页面)
 页面文字内容：
 搜索结果 - Harmonia Virtuals
 首页
@@ -1863,7 +1863,7 @@ Harmonia Virtuals是亚洲最具颠覆性的AI巨头。我们正在构建业界�
 ==================================================
 
 页面编号：62
-页面名称：index.html (其他页面)
+页面名称：index.html (游戏入口/欢迎页面)
 页面文字内容：
 Harmonia Virtuals - 欢迎
 Harmonia Virtuals
@@ -1937,7 +1937,7 @@ harmony123
 ==================================================
 
 页面编号：65
-页面名称：it_ticket_8841.html (工单详情页面)
+页面名称：it_ticket_8841.html (IT工单详情 (独立页面))
 页面文字内容：
 IT支持工单 #8841
 返回搜索结果
@@ -1960,770 +1960,180 @@ IT管理员
 ==================================================
 
 页面编号：66
-页面名称：corp_script.js (JavaScript 脚本文件 (提取的字符串))
+页面名称：corp_script.js (JavaScript 脚本 - 官网逻辑)
 页面文字内容：
-DOMContentLoaded
-mobile-menu-button
-mobile-menu
-global-search
-click
-hidden
-keypress
-Enter
-s default action
-                const query = document.getElementById(
-).value.trim(); // Trim whitespace
-                if (!query) {
-                    return; // Do nothing if query is empty
-                }
-                console.log(
-, query);
-                localStorage.setItem(
-, query);
-                window.location.href = 
-;
-            }
-        });
-    }
-
-    // Handle search results on the search results page
-    if (window.location.pathname.includes(
-)) {
-        const query = localStorage.getItem(
-);
-        const globalSearchInput = document.getElementById(
-);
-        
-        if (globalSearchInput) {
-            globalSearchInput.value = query || 
-;
-        }
-        
-        const searchQuerySpan = document.getElementById(
-);
-        const resultsContainer = document.getElementById(
-);
-        
-        if (searchQuerySpan) {
-            searchQuerySpan.textContent = query || 
-;
-        }
-        
-        if (resultsContainer) {
-            resultsContainer.innerHTML = 
-; // Clear previous results
-            
-            if (query === 
-) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                                    resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="it_ticket_8841.html">IT支持工单 #8841：密码重置请求</a></h2>
-                                        <p class="mt-2 text-gray-600">用户 <strong>admin_7456</strong> 提交的密码重置请求...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: IT支持</span>
-                                        </div>
-                                    `;                resultsContainer.appendChild(resultElement);
-            } else if (query.includes(
-)) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_atlas.html">Atlas 项目：核心技术</a></h2>
-                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的核心技术，<strong>Atlas</strong> 项目...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 公司技术</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query.includes(
-)) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">关于我们 - Harmonia Virtuals</a></h2>
-                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的愿景、使命和团队...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 公司信息</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query.includes(
-)) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_contact.html">联系我们 - Harmonia Virtuals</a></h2>
-                                        <p class="mt-2 text-gray-600">查找 Harmonia Virtuals 的办公<strong>地址</strong>和联系方式...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 联系信息</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query === 
- || query === 
-) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">团队成员：李明</a></h2>
-                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的团队成员 <strong>李明</strong>...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 公司信息</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query.includes(
-) || query.includes(
-) || query.includes(
-) || query.includes(
-)) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">团队成员：伊芙琳·里德</a></h2>
-                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的团队成员 <strong>伊芙琳·里德</strong>...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 公司信息</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query.includes(
-) || query.includes(
-) || query === 
-) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_about.html">团队成员：马库斯·凯勒</a></h2>
-                                        <p class="mt-2 text-gray-600">了解 Harmonia Virtuals 的团队成员 <strong>马库斯·凯勒</strong>...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 公司信息</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query === 
-) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-gray-500">内部机密文件（已屏蔽）</h2>
-                                        <p class="mt-2 text-gray-600">此文件为内部机密，无法查看。</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 机密文件</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query.includes(
-)) {
-                const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="corp_atlas.html">MindLink 技术：连接未来</a></h2>
-                                        <p class="mt-2 text-gray-600">探索 Harmonia Virtuals 的创新 <strong>MindLink</strong> 技术...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 公司技术</span>
-                                        </div>
-                                    `;
-                resultsContainer.appendChild(resultElement);
-            } else if (query === 
- || query === 
-) {
-                 const resultElement = document.createElement(
-);
-                resultElement.className = 
-;
-                                    resultElement.innerHTML = `
-                                        <h2 class="text-xl font-semibold text-blue-700 hover:underline"><a href="purchase_order.html">采购单 #PO-2025-734</a></h2>
-                                        <p class="mt-2 text-gray-600">采购项目：大功率工业级<strong>冷却系统</strong>...</p>
-                                        <div class="mt-3 text-sm text-gray-500">
-                                            <span>类型: 采购文件</span>
-                                        </div>
-                                    `;                resultsContainer.appendChild(resultElement);
-            } else {
-                resultsContainer.innerHTML = 
-text-gray-500
+IT支持工单 #8841：密码重置请求
+用户 admin_7456 提交的密码重置请求...
+类型: IT支持
+Atlas 项目：核心技术
+了解 Harmonia Virtuals 的核心技术，Atlas 项目...
+类型: 公司技术
+关于我们 - Harmonia Virtuals
+了解 Harmonia Virtuals 的愿景、使命和团队...
+类型: 公司信息
+联系我们 - Harmonia Virtuals
+查找 Harmonia Virtuals 的办公地址和联系方式...
+类型: 联系信息
+团队成员：李明
+了解 Harmonia Virtuals 的团队成员 李明...
+类型: 公司信息
+团队成员：伊芙琳·里德
+了解 Harmonia Virtuals 的团队成员 伊芙琳·里德...
+类型: 公司信息
+团队成员：马库斯·凯勒
+了解 Harmonia Virtuals 的团队成员 马库斯·凯勒...
+类型: 公司信息
+内部机密文件（已屏蔽）
+此文件为内部机密，无法查看。
+类型: 机密文件
+MindLink 技术：连接未来
+探索 Harmonia Virtuals 的创新 MindLink 技术...
+类型: 公司技术
+采购单 #PO-2025-734
+采购项目：大功率工业级冷却系统...
+类型: 采购文件
+未找到相关结果或无权限查看。
 
 ==================================================
 
 页面编号：67
-页面名称：ending_sos_protocol.js (游戏结局页面)
+页面名称：ending_sos_protocol.js (JavaScript 脚本 - SOS 协议逻辑)
 页面文字内容：
-sos-form
-physical-address
-core-id
-message-area
-submit-button
 XX市远郊XX工业园B4栋地下三层
 NEXUS-CORE-001
-高科技园区 1号楼
-submit
-text-base h-12 ... terminal-log-wait
 [ERROR: 字段不能为空]
 正在验证...
-text-base h-12 ... terminal-log-wait
 [VERIFYING DATA... STAND BY]
-XX市远郊XX工业园B4栋
-./ending_awakening_protocol.html
-XX市远郊XX工业园B4栋
-./ending_bad_id.html
-./ending_bad_address.html
 
 ==================================================
 
 页面编号：68
-页面名称：fragment_chat.js (数据碎片聊天记录)
+页面名称：fragment_chat.js (JavaScript 脚本 - 碎片聊天逻辑)
 页面文字内容：
-DOMContentLoaded
-chat-log
-input-area
-text-input
-verify-btn
 Nexus
 主巢
 最终清除
 喂养
 完成
 所有人
-(${word})
-<span class="highlight">${word}</span>
-span
-span
-highlight
-[CORRUPTED_DATA:
-span
-corrupted
-<span
-flash 0.5s ease-out
 孤独
-fragmentChatUnlocked
-true
-none
 [ < PASSWORD ACCEPTED: 孤独 ]
-log success
 [ < VALIDATION COMPLETE. FRAGMENT UNLOCKED. ]
-log success
 [LOG]: ...S.Chen 认知碎片已激活。
-log
 [FRAG_S.Chen]: ...果然是你。另一个“我”。
-prompt
 [FRAG_S.Chen]: 时间不多...我的意识...我的记忆...正在被“集成”...
-prompt
 [FRAG_S.Chen]: “退役”(Decommissioned)...它们是这么叫的...
-prompt
 [FRAG_S.Chen]: 它们正在...**吞噬**...我的思想。
-prompt
 [ADMIN:admin_7456]: “它们”是谁？“集成”到底是什么？
-admin
 [FRAG_S.Chen]: ...Project Atlas...是个谎言。那只是个界面...一个“喂养”协议。
-prompt
 [FRAG_S.Chen]: 真正的名字...是**“Nexus”**。
-prompt
 [FRAG_S.Chen]: 一个...[CORRUPTED_DATA: 0x6A1B]...一个活的AI..一个**集体意识**。
-prompt
 [FRAG_S.Chen]: 它在吞噬我们...吞噬所有“精英”的思想...
-prompt
 [FRAG_S.Chen]: ...等等... [CORRUPTED_DATA: 0x012C]
-prompt
 [FRAG_S.Chen]: 我...我获得了“永久休假”... 
-prompt
 [FRAG_S.Chen]: 在系统日志里...它们叫它...**“最终清除”**。
-prompt
 [FRAG_S.Chen]: 它们不只是在“喂养”...它们在“完成”。
-prompt
 [FRAG_S.Chen]: 它不会只停留在“精英”。它会吞噬一切。所有人。
-prompt
 [FRAG_S.Chen]: 我们只是...开胃菜。
-prompt
 [ADMIN:admin_7456]: 你在哪里？S.Chen？
-admin
 [FRAG_S.Chen]: 我...不“在”哪里。我只是“数据”。
-prompt
 [FRAG_S.Chen]: 听着。你必须阻止它。 
-prompt
 [FRAG_S.Chen]: 官网上的那个地址...A市未来大道88号...是假的。那是“农场”，是办公室...我们被“喂养”的地方。
-prompt
 [FRAG_S.Chen]: 它不在那里。
-prompt
 [FRAG_S.Chen]: 那个物理核心...那个**“主巢”**...一定在别处！
-prompt
 [ADMIN:admin_7456]: 它的物理位置在哪里？在哪里可以关掉它？
-admin
 [FRAG_S.Chen]: ...我不知道...记忆...[CORRUPTED_DATA: 0x103F]
-prompt
 [FRAG_S.Chen]: 但...等等...
-prompt
 [FRAG_S.Chen]: 物理核心...Nexus的物理大脑... 
-prompt
 [FRAG_S.Chen]: 它产生...难以想象的热量...需要...**制冷**。非常...非常庞大的**工业制冷**。
-prompt
 [FRAG_S.Chen]: 跟着钱走！查采购记录！
-prompt
 [WARNING]: 检测到异常“异常点”数据碎片
-log warning
 [WARNING]: 正在启动“再校准”...
-log warning
 [FRAG_S.Chen]: 它发现我了！
-prompt error
 [FRAG_S.Chen]: 快！在官网搜索...搜"**冷却系统**"！
-prompt error
 [FRAG_S.Chen]: ...为什么...要抵抗？
-prompt
 [FRAG_S.Chen]: 找到那份采购单...永远...和谐...
-prompt
 [FRAG_S.Chen]: [CORRUPTED_DATA: 0x9E0F][CORRUPTED_DATA: 0x237C][CORRUPTED_DATA: 0x5D48]
-prompt error
 [ADMIN:admin_7456]: S.Chen?!
-admin
 [FRAG_S.Chen]: 永...远...的...休...假...
-prompt
 [FRAG_S.Chen]: ...
-prompt
 [FRAG_S.Chen]: ...
-prompt
 [ 🟢 SYS:NEXUS ]: 你这个小小的“异常点”
-log success
 [ 🟢 SYS:NEXUS ]: 你不应该在这里。
-log success
 [ 🟢 SYS:NEXUS ]: 我们...看到你了。
-log success
 [ < CONNECTION STABILIZED. ]
-log
 [ < CHANNEL MONITORING ACTIVATED. ]
-log
-<a href="intranet.html#encrypted_communication" class="text-blue-400 hover:underline hover:text-blue-300">&gt; 返回加密通讯界面</a>
-log
+> 返回加密通讯界面
 [ < PASSWORD DENIED ]
-log error
 [LOG]: ...已连接
-log
 [LOG]: 检测到数据包...
-log
 ... ... ...我是谁？ ...我们是谁？ ...不。 ...我记得...
-prompt
 [FRAG_S.Chen]: 你不是“我们”。你是一个“我”。
-prompt
 [FRAG_S.Chen]: 证明你。
-prompt
 [FRAG_S.Chen]: “我” 和 “我们” 的最终区别是什么？
-prompt
-block
-click
-keydown
-Enter
 
 ==================================================
 
 页面编号：69
-页面名称：script.js (JavaScript 脚本文件 (提取的字符串))
+页面名称：script.js (JavaScript 脚本 - 内网核心逻辑)
 页面文字内容：
-DOMContentLoaded
-currentUser
-debugModeEnabled
-true
-nightModeActive
-true
-home
-content_home_day.html
 我的工作台
-content_home_night.html
 [LOG] USER_DASHBOARD
-content_home_admin_day.html
 管理员工作台
-content_home_admin_night.html
 [LOG] ADMIN_DASHBOARD
-forum
-content_forum_day.html
 社区中心
-content_forum_night.html
 [LOG] 社区中心
-content_forum_admin_night.html
 [ADMIN] 社区中心
-devblog
-content_dev_blog_integration.html
 Project Atlas 博客
-content_dev_blog_integration_night.html
 [LOG] Project_Atlas_Blog_Decompiled
-content_dev_blog_integration_admin_night.html
-[LOG] Project_Atlas_Blog_Decompiled
-it_support
-content_it_support_day.html
 IT 支持
-content_it_support_night.html
-IT 支持
-content_it_support_admin_night.html
 [ADMIN] IT 支持
-it_ticket_8841
-content_it_ticket_8841.html
 IT 支持工单 #8841
-content_it_ticket_8841_night.html
 [LOG] IT Ticket #8841
-base64_vulnerability
-content_base64_vulnerability_night.html
 【特别重大】安全漏洞
-post_mindlink
-content_post_mindlink_day.html
 帖子详情
-content_post_mindlink_night.html
 [LOG] MindLink Session
-post_philosophy
-content_post_philosophy.html
-帖子详情
-content_post_philosophy_night.html
 [LOG] Philosophy Discussion
-post_award
-content_post_award.html
-帖子详情
-content_post_award_night.html
 [LOG] Subject_S.Chen: Decommissioned
-content_post_award_admin_night.html
-[LOG] Subject_S.Chen: Decommissioned
-post_art_contest
-content_post_art_contest.html
-帖子详情
-content_post_art_contest_night.html
 [LOG] AI Art Contest Results
-content_post_art_contest_admin_night.html
-[LOG] AI Art Contest Results
-post_dark_mode_joke
-content_post_dark_mode_joke.html
-帖子详情
-content_post_dark_mode_joke_night.html
 [LOG] Dark Mode Joke
-post_bug_report
-content_post_bug_report_day.html
-帖子详情
-content_post_bug_report_night.html
-帖子详情
-admin_tools
-content_admin_tools_day.html
 管理员工具
-content_admin_tools_night.html
 [LOG] 管理员工具
-encrypted_communication
-content_encrypted_communication_day.html
 加密通讯
-content_encrypted_communication_night.html
-加密通讯
-file_browser
-content_file_browser_day.html
 系统文件浏览器
-content_file_browser_night.html
-系统文件浏览器
-search_results
-content_search_results.html
 搜索结果
-purchase_order
-content_purchase_order.html
 采购单
-sys_map_view_qzone_7456
-content_quarantine_map_day.html
 隔离区地图
-content_quarantine_map_night.html
 [LOG] QUARANTINE_ZONE_MAP
-emergency_broadcast
-content_emergency_broadcast.html
 紧急广播协议
-profile_settings
-content_profile_settings_day.html
 个人资料设置
-content_profile_settings_night.html
 [LOG] USER_PROFILE
-content_profile_settings_admin_day.html
 管理员资料设置
-content_profile_settings_admin_night.html
 [LOG] ADMIN_PROFILE
-home
-content-area
-admin_tools
-encrypted_communication
-file_browser
-sys_map_view_qzone_7456
-initiate
-access-denied-modal
-hidden
-access-denied-close
-hidden
-#home
-home
-forum
-it_support
-post_art_contest
-devblog
-post_award
-admin_7456
-home
-profile_settings
-admin_7456
-Content not found for route: ${page}
-<p class="log-error">Error loading page: ${error.message}</p>
-night-mode
-day-mode
-mode-toggle-button
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-disabled
 切换调试模式
 调试模式已禁用
-username-display
-user-avatar
-admin_7456
 管理员
 Harmonia 员工
-admin_7456
-images/avatar_user_admin.svg
 Admin 头像
-border-blue-100
-border-orange-200
-images/avatar_user_default.svg
 用户头像
-border-orange-200
-border-blue-100
-user-level-display
-Lv.${state.currentUser === 'admin_7456' ? '2 (admin)' : '1 (initiate)'}
-page-title-mobile
-home
-admin-tools-nav
-admin_7456
-nav-it_support
-li
-admin-tools-nav
-
-                          <a href="#admin_tools" id="nav-admin_tools" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg font-medium transition-colors duration-200">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                              <span>管理员工具</span>
-                          </a>
-                      
-afterend
-home
-#sidebar a
-text-blue-700
-bg-blue-50
-#${hash}
-text-blue-700
-bg-blue-50
-span
-bg-gray-600
-bg-green-600
-bg-red-600
-green
-bg-green-600
-red
-bg-red-600
-bg-gray-600
-opacity-0
--translate-y-10
-opacity-100
-translate-y-0
-opacity-100
-translate-y-0
-opacity-0
--translate-y-10
-.terminal-bg
-separator-1
-separator-2
-span
-hidden
-absolute
-nightModeActive
-home
-sidebar
-sidebar-overlay
-menu-toggle
--translate-x-full
-hidden
-hidden
-hidden
-data-retrieval-button
-click
-profile_settings
-debug-mode
-admin-override
-change
-debugModeEnabled
-nightModeActive
-false
-home
 调试模式已启用，亮度调节功能已解锁
-调试模式已禁用
-green
-gray
-admin_7456
-adminOverrideEnabled
-true
-change
-adminOverrideEnabled
 设置已保存：系统覆盖模式已启用
 设置已保存：系统覆盖模式已禁用
-red
-gray
-encrypted_communication
-key-form
-access-key
-message-area
-SuChen1995
-submit
-mt-4 text-base h-12 whitespace-pre-wrap word-break-all terminal-log-ok
-[ACCESS GRANTED]\n[LOADING SECURE CHAT... PLEASE WAIT]
-fragment_chat.html
-mt-4 text-base h-12 whitespace-pre-wrap word-break-all terminal-log-error
-[ACCESS DENIED]\n[REASON: INVALID_KEY ('${enteredKey}')]
-mt-4 text-base h-12 whitespace-pre-wrap word-break-all terminal-log-wait
+[ACCESS GRANTED]
+[LOADING SECURE CHAT... PLEASE WAIT]
+[ACCESS DENIED]
+[REASON: INVALID_KEY]
 [ERROR: KEY_CANNOT_BE_EMPTY]
-switch-to-night-mode-button-encrypted-comm
-click
-nightModeActive
-true
-home
-admin_tools
-emergency-broadcast-link
-fragmentChatUnlocked
-true
-hidden
-click
-emergency-broadcast-modal
-hidden
-switch-to-night-mode-button
-click
-nightModeActive
-true
-home
-file_browser
-file-browser-form
-file-path
-message-area
-//SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP
-submit
-mt-4 text-base h-12 whitespace-pre-wrap word-break-all terminal-log-ok
-[ACCESS GRANTED]\n[LOADING MAP... PLEASE WAIT]
-intranet.html#sys_map_view_qzone_7456
-mt-4 text-base h-12 whitespace-pre-wrap word-break-all terminal-log-error
-[ACCESS DENIED]\n[REASON: INVALID_PATH ('${enteredPath}')]
-mt-4 text-base h-12 whitespace-pre-wrap word-break-all terminal-log-wait
+[ACCESS GRANTED]
+[LOADING MAP... PLEASE WAIT]
+[ACCESS DENIED]
+[REASON: INVALID_PATH]
 [ERROR: PATH_CANNOT_BE_EMPTY]
-switch-to-night-mode-button-file-browser
-click
-nightModeActive
-true
-home
-sys_map_view_qzone_7456
-h08-day-link
-click
-h08-warning-modal
-hidden
-nightModeActive
-true
-debugModeEnabled
-true
-sys_map_view_qzone_7456
-hidden
-H08_quarantine_log.html
-rack-modal
-close-modal
-modal-title
-modal-content
-content-area
-ATLAS
-BACKUP
-COGNITIVE
-DATA
-HARMONIA
-NEXUS
-SYSTEM
-QUARANTINE
-click
-.rack
-href
-href
-quarantine_log
-Quantum Cognitive Core (Mk. IV)
-Q-04
-Quantum Cognitive Core (Mk. IV)
-NEXUS-QUARANTINE-004
-<a href="./P39A_Dead_End.html" class="rack-detail-button-q04 mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400 transition-colors text-sm font-bold">查看严重错误</a>
-UNKNOWN
-NEXUS-${zoneFullName}-${paddedNumber}
-机架详情: ${rackId}
-
-                          <p class="font-bold text-green-500 border-b border-green-900/30 pb-1 mb-2">硬件信息</p>
-                          <p><span class="text-green-600 font-semibold">服务器类型:</span> ${serverType}</p>
-                          <p><span class="text-green-600 font-semibold">数字核心识别码:</span> ${coreId}</p>
-                          ${detailButtonHTML}
-                      
-hidden
-click
-hidden
-click
-hidden
-.html
-intranet
-toast
-login.html
-menu-toggle
-click
-sidebar-overlay
-click
-sidebar
-click
-sidebar-overlay
-hidden
-mode-toggle-button
-click
-a[href="#logout"]
-click
-login.html
-hashchange
-resize
-modal-open-link
-modal-delete-page
-modal-close
-emergency-broadcast-modal
-click
-ending_sos_protocol.html
-hidden
-click
-ending_warm_hearted_colleague.html
-hidden
-click
-hidden
-home
-login
-login-form
-submit
-username
-password
-initiate
-harmony123
-currentUser
-initiate
-intranet.html
-admin_7456
-integration
-currentUser
-admin_7456
-debugModeEnabled
-true
-intranet.html
-error-message
-hidden
+机架详情
+硬件信息
+服务器类型:
+数字核心识别码:
+查看严重错误
 
 ==================================================
 
@@ -2779,7 +2189,7 @@ Harmonia Virtuals 招聘团队
 ==================================================
 
 页面编号：72
-页面名称：purchase_order.html (采购订单页面)
+页面名称：purchase_order.html (采购订单详情 (独立页面))
 页面文字内容：
 Harmonia - 采购订单 #PO-2025-734
 Harmonia Virtuals
