@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结局 ? : 反诈先锋</title>
+    <link href="dist/output.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff; /* 极致纯白 */
+            color: #111827;
+        }
+
+        /* 内心独白字体 - 轻松、生活化 */
+        .font-monologue {
+            font-family: 'Georgia', 'Noto Serif SC', serif;
+        }
+
+        /* 动画辅助类 */
+        .fade-in-item {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 模拟手机通知容器 */
+        .notification-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6 selection:bg-green-100">
+
+    <div class="w-full max-w-2xl bg-white p-10 md:p-12 rounded-lg shadow-2xl text-center">
+
+        <!-- 1. 举报成功界面 (模拟系统通知) -->
+        <div id="section-system" class="space-y-6">
+            <!-- 巨大的绿色盾牌 SVG -->
+            <div id="item-1" class="fade-in-item flex justify-center">
+                <svg class="w-32 h-32 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            
+            <div id="item-2" class="fade-in-item">
+                <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">举报已受理</h1>
+            </div>
+
+            <!-- 详情卡片 -->
+            <div id="item-3" class="fade-in-item mx-auto max-w-sm bg-gray-50 rounded-xl p-6 text-left border border-gray-100 shadow-sm">
+                <div class="grid grid-cols-3 gap-y-3 text-sm">
+                    <span class="text-gray-400">对象</span>
+                    <span class="col-span-2 font-medium text-gray-900">Harmonia Virtuals</span>
+                    
+                    <span class="text-gray-400">类型</span>
+                    <span class="col-span-2 font-medium text-gray-900">疑似电信诈骗 / 虚假招聘</span>
+                    
+                    <span class="text-gray-400">状态</span>
+                    <span class="col-span-2 font-bold text-green-600 flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        已拦截
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 内心独白 (轻松讽刺) -->
+        <div id="section-monologue" class="space-y-6 pt-8 text-left max-w-lg mx-auto">
+            <p id="item-4" class="fade-in-item font-monologue text-lg text-gray-700 leading-relaxed">
+                呼... 吓死我了。
+            </p>
+            <p id="item-5" class="fade-in-item font-monologue text-lg text-gray-700 leading-relaxed">
+                开什么玩笑？年薪一千万？现在的骗子连剧本都不好好写了吗？
+            </p>
+            <p id="item-6" class="fade-in-item font-monologue text-lg text-gray-700 leading-relaxed">
+                作为一个遵纪守法的公民，我果断反手就是一个举报，并下载了<span class="font-bold text-blue-600">国家反诈中心 APP</span>。
+            </p>
+            <p id="item-7" class="fade-in-item font-monologue text-lg text-gray-700 leading-relaxed">
+                看着手机屏幕上那个“安全”的绿色盾牌，我感到了前所未有的踏实。
+            </p>
+            <p id="item-8" class="fade-in-item font-monologue text-lg text-gray-700 leading-relaxed border-l-4 border-green-200 pl-4 italic">
+                还是去投那个月薪五千、单休、不交公积金的岗位吧。那听起来才像是真实的人生。
+            </p>
+        </div>
+
+        <!-- 3. 6个月后的新闻推送 (淡淡的灰色小字) -->
+        <div id="section-news" class="pt-12 pb-8 border-t border-gray-100 mt-12">
+            <div id="item-9" class="fade-in-item mb-6">
+                <span class="text-xs font-bold tracking-widest text-gray-300 uppercase">—— 6个月后的世界快照 ——</span>
+            </div>
+
+            <div id="item-10" class="fade-in-item space-y-4 text-left">
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
+                    <p class="text-xs text-gray-400 mb-1">[科技] 推送</p>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1">Harmonia 发布 Project Atlas：人类效率的新纪元</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        科技巨头 Harmonia Virtuals 今日正式上线其 AI 原生操作系统。股价应声暴涨 300%。全网好评如潮，网友称“现在的互联网环境变得好礼貌，大家都能互相理解了，这就是天堂吗？”。
+                    </p>
+                </div>
+
+                <div id="item-11" class="fade-in-item bg-gray-50 p-4 rounded-lg border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
+                    <p class="text-xs text-gray-400 mb-1">[职场] 热议</p>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1">羡慕哭！又一波技术大牛加入 Harmonia</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        据悉，包括知名架构师和艺术家在内的数千名顶尖人才，在入职 Harmonia 仅半年后就获得了“终身福利”。网友：这才是打工人的终极梦想啊！
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. 真正的结局文字 -->
+        <div id="section-ending" class="space-y-6 pt-4">
+            <p id="item-12" class="fade-in-item text-gray-800 font-medium">
+                一年后，你在出租屋里吃着泡面，刷着并没有什么不同的短视频。
+            </p>
+            <p id="item-13" class="fade-in-item text-gray-800 font-medium">
+                虽然你的思维变得有些迟钝，虽然你偶尔会觉得世界安静得可怕，但至少——
+            </p>
+            <p id="item-14" class="fade-in-item text-xl font-bold text-green-600 mt-4">
+                <span class="font-bold text-blue-600">你</span> 没有失去任何东西。
+            </p>
+            
+            <!-- 结局标题 -->
+            <div id="item-15" class="fade-in-item mt-8">
+                <p class="text-2xl font-bold text-gray-800 font-mono">
+                    结局 ? : 反诈先锋
+                </p>
+            </div>
+
+            <!-- 成就 -->
+            <div id="item-16" class="fade-in-item mt-4">
+                <p class="text-lg font-bold text-yellow-500 animate-pulse">
+                    （恭喜你发现了这个隐藏结局！）
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+        // 辅助函数：淡入元素
+        const fadeIn = (id) => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.add('visible');
+            }
+        };
+
+        // 延迟函数
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // 执行动画序列
+        async function runSequence() {
+            // 1. 系统界面 - 快速出现，给人一种APP加载完成的感觉
+            await sleep(300);
+            fadeIn('item-1'); // 盾牌
+            await sleep(200);
+            fadeIn('item-2'); // 标题
+            await sleep(300);
+            fadeIn('item-3'); // 详情单
+            
+            // 2. 内心独白 - 逐句显示，阅读感
+            await sleep(1200);
+            fadeIn('item-4'); // 呼...
+            await sleep(1000);
+            fadeIn('item-5'); // 开什么玩笑
+            await sleep(1500);
+            fadeIn('item-6'); // 反诈APP
+            await sleep(1200);
+            fadeIn('item-7'); // 绿色盾牌
+            await sleep(1500);
+            fadeIn('item-8'); // 月薪五千
+            
+            // 3. 新闻 - 稍作停顿，像是时光飞逝
+            await sleep(2500);
+            fadeIn('item-9');  // 分割线
+            await sleep(500);
+            fadeIn('item-10'); // 科技新闻
+            await sleep(800);
+            fadeIn('item-11'); // 职场新闻
+            
+            // 4. 结局总结 - 沉重但又有点搞笑的现实
+            await sleep(2500);
+            fadeIn('item-12'); // 一年后...
+            await sleep(1500);
+            fadeIn('item-13'); // 虽然...
+            await sleep(1500);
+            fadeIn('item-14'); // 没被骗钱
+            
+            await sleep(1500);
+            fadeIn('item-15'); // 结局标题
+            await sleep(800);
+            fadeIn('item-16'); // 成就
+        }
+
+        window.onload = runSequence;
+    </script>
+
+    <!-- Mobile Adapter -->
+    <script src="js/mobile_adapter.js"></script>
+</body>
+</html>

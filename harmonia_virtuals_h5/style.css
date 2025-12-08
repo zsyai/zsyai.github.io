@@ -1,0 +1,339 @@
+:root {
+    /* --- Fonts --- */
+    --font-primary: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    --font-mono: 'Courier New', 'Lucida Console', monospace;
+
+    /* --- Day Mode Colors (The Facade) --- */
+    --color-day-bg: #FFFFFF;
+    --color-day-text: #222222;
+    --color-day-primary: #007AFF;
+    --color-day-header: #F5F5F7;
+    --color-day-border: #EAEAEA;
+
+    /* --- Night Mode Colors (The Debug Log) --- */
+    --color-night-bg: #0A0A0A;
+    --color-night-text: #CCCCCC;
+    --color-night-log: #FFFFFF;
+    --color-night-warning: #FFFF00;
+    --color-night-error: #FF0000;
+    --color-night-admin: #00FF00;
+}
+
+/* ==========================================================================
+   1. Global Styles & Day Mode Defaults
+   ========================================================================== */
+body {
+    font-family: var(--font-primary);
+    background-color: #f8fafc; /* Tailwind gray-50 */
+    color: var(--color-day-text);
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Default scrollbar for day mode */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+
+a { color: var(--color-day-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button, .button {
+    background-color: var(--color-day-primary); color: white; padding: 10px 15px; border: none;
+    border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.3s;
+}
+button:hover, .button:hover { background-color: #0056b3; }
+
+/* Toast Notification */
+#toast {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   2. Template 1: External Communications (Chat/Email)
+   ========================================================================== */
+.chat-app-container, .email-app-container {
+    max-width: 900px; margin: 20px auto; border: 1px solid var(--color-day-border);
+    border-radius: 8px; background: var(--color-day-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.chat-app-container { display: flex; flex-direction: column; height: 90vh; }
+.chat-header { padding: 10px 15px; border-bottom: 1px solid var(--color-day-border); display: flex; align-items: center; gap: 10px; }
+.chat-header img { border-radius: 50%; }
+.chat-messages { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.message-bubble-hr { max-width: 75%; padding: 12px 18px; border-radius: 20px; background: #EFEFEF; align-self: flex-start; line-height: 1.5; }
+.player-option { background-color: var(--color-day-primary); color: white; border: 0; border-radius: 20px; padding: 12px 20px; cursor: pointer; align-self: flex-end; text-align: center; }
+.email-header { padding: 20px; border-bottom: 1px solid var(--color-day-border); }
+.email-subject { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
+.email-meta { color: #666; }
+.email-body { padding: 20px; line-height: 1.6; }
+
+/* ==========================================================================
+   3. Template 3: System Portal (Login/Profile)
+   ========================================================================== */
+.portal-background { display: grid; place-items: center; min-height: 100vh; background: var(--color-day-header); }
+.modal-box { background: var(--color-day-bg); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 100%; }
+.modal-box h2 { margin-top: 0; }
+.modal-box input { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid var(--color-day-border); border-radius: 6px; margin-bottom: 15px; }
+.modal-box button { width: 100%; padding: 12px; border: none; border-radius: 6px; }
+
+/* ==========================================================================
+   4. Template 4: Intranet Hub (Shared Styles)
+   ========================================================================== */
+/* Using tailwind classes directly in intranet.html now */
+
+
+/* ==========================================================================
+   5. Template 5: Content Pages (Forums/Blogs)
+   ========================================================================== */
+.post-list .post-item { display: flex; justify-content: space-between; padding: 15px 10px; border-bottom: 1px solid var(--color-day-border); transition: background-color 0.2s ease; }
+.post-list .post-item:hover { background-color: #F9F9F9; }
+.post-detail h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.post-detail .post-meta { font-size: 0.9rem; color: #666; border-bottom: 1px solid var(--color-day-border); padding-bottom: 15px; }
+.post-detail .post-body { font-size: 1.1rem; line-height: 1.7; margin-top: 20px; }
+
+/* ==========================================================================
+   6. Night Mode / Debug Mode Overlay
+   ========================================================================== */
+body.night-mode {
+    font-family: var(--font-mono);
+    background-color: var(--color-night-bg);
+    color: var(--color-night-text);
+}
+
+/* Night mode scrollbar */
+.night-mode ::-webkit-scrollbar { width: 6px; height: 6px; }
+.night-mode ::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+.night-mode ::-webkit-scrollbar-thumb:hover { background: #555; }
+.night-mode ::-webkit-scrollbar-track { background: #1a1a1a; }
+
+.night-mode a { color: #63B3ED; /* Tailwind blue-400 */ }
+.night-mode a:hover { color: #90CDF4; /* Tailwind blue-300 */ }
+
+/* Intranet Hub Night Mode Styles */
+.night-mode #sidebar {
+    background-color: #111111;
+    border-color: #2d2d2d;
+}
+.night-mode #sidebar .text-blue-600 { /* Logo text */
+    color: #63B3ED; /* Tailwind blue-400 */
+}
+.night-mode #sidebar a {
+    color: #a0aec0; /* Tailwind gray-400 */
+}
+.night-mode #sidebar a:hover {
+    background-color: #2d3748; /* Tailwind gray-800 */
+    color: #e2e8f0; /* Tailwind gray-200 */
+}
+.night-mode #sidebar a.text-blue-700 { /* Active link override */
+    background-color: #2c5282; /* Tailwind blue-800 */
+    color: #e2e8f0; /* Tailwind gray-200 */
+}
+.night-mode #sidebar .border-gray-200 { /* Border inside nav */
+    border-color: #2d2d2d;
+}
+
+.night-mode header {
+    background-color: rgba(17, 17, 17, 0.8); /* #111111 with backdrop blur */
+    border-color: #2d2d2d;
+}
+.night-mode #username-display { color: #e2e8f0; /* Tailwind gray-200 */ }
+.night-mode #user-level-display { color: #a0aec0; /* Tailwind gray-400 */ }
+.night-mode #mode-toggle-button {
+    color: #a0aec0; /* Tailwind gray-400 */
+}
+.night-mode #mode-toggle-button:hover {
+    background-color: #2d3748; /* Tailwind gray-800 */
+}
+
+/* Content & Post Night Mode Styles */
+.night-mode .log-text, .night-mode .log-warning, .night-mode .log-error, .night-mode .log-alert { font-family: var(--font-mono); color: var(--color-night-log); }
+.night-mode .log-warning { color: var(--color-night-warning); }
+.night-mode .log-error { color: var(--color-night-error); }
+.night-mode .log-alert { color: var(--color-night-error); font-weight: bold; animation: pulse 1.5s infinite; }
+@keyframes pulse { 50% { opacity: 0.6; } }
+.night-mode .modal-box { background: var(--color-night-bg); border-color: #333; }
+.night-mode .post-item:hover { background-color: #1A1A1A; }
+
+/* P9: Home Dashboard Night Mode */
+.night-mode .text-gray-800 {
+    color: var(--color-night-text);
+}
+.night-mode .bg-white {
+    background-color: #111111;
+    border-color: #2d2d2d;
+}
+.night-mode .border-gray-200 {
+    border-color: #2d2d2d;
+}
+.night-mode .text-gray-600, .night-mode .text-gray-500 {
+    color: #a0aec0; /* Tailwind gray-400 */
+}
+.night-mode .bg-green-100 {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+.night-mode .text-green-700 {
+    color: var(--color-night-admin);
+}
+.night-mode .bg-yellow-100 {
+    background-color: rgba(255, 255, 0, 0.1);
+}
+.night-mode .text-yellow-700 {
+    color: var(--color-night-warning);
+}
+.night-mode .line-through {
+    color: #718096; /* Tailwind gray-500 */
+}
+.night-mode .text-blue-500 {
+    color: #63B3ED; /* Tailwind blue-400 */
+}
+.night-mode .text-green-500 {
+    color: var(--color-night-admin);
+}
+
+/* Admin-specific styles for night mode */
+.night-mode .admin-tool-button {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: var(--color-night-admin);
+    border: 1px solid var(--color-night-admin);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.night-mode .admin-tool-button:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.night-mode .warning-text {
+    color: var(--color-night-warning);
+}
+
+.night-mode .data-fragment {
+    color: var(--color-night-admin);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Profile Settings Night Mode */
+.night-mode .max-w-3xl h1 {
+    color: var(--color-night-text);
+}
+.night-mode label {
+    color: var(--color-night-text);
+}
+.night-mode input[type="text"], .night-mode input[type="email"], .night-mode input[type="password"] {
+    background-color: #1a1a1a;
+    border-color: #444444;
+    color: var(--color-night-log);
+}
+.night-mode input::placeholder {
+    color: #718096; /* Tailwind gray-500 */
+}
+.night-mode .bg-gray-100 {
+    background-color: #1a1a1a;
+}
+.night-mode .border-gray-300 {
+    border-color: #444444;
+}
+.night-mode .text-gray-900 {
+    color: var(--color-night-log);
+}
+.night-mode .focus\:ring-blue-500:focus {
+    --tw-ring-color: #63B3ED;
+}
+.night-mode .focus\:border-blue-500:focus {
+    border-color: #63B3ED;
+}
+.night-mode .rounded-full {
+}
+.night-mode .text-blue-600 {
+    color: #63B3ED;
+}
+.night-mode .border-gray-700 {
+    border-color: #2d2d2d;
+}
+
+/* Terminal-specific colors */
+.night-mode .terminal-bg { background-color: #050505; overflow-x: auto; }
+.night-mode .terminal-header { color: #00FF00; } /* Green */
+.night-mode .terminal-log-ok { color: #00FF00; }
+.night-mode .terminal-log-wait { color: #FFFF66; } /* Yellow */
+.night-mode .terminal-log-error { color: #FF4444; } /* Red */
+.night-mode .terminal-prompt { color: #00FF00; }
+.night-mode .terminal-input {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-bottom: 2px solid #00FF00;
+}
+.night-mode .terminal-input:focus {
+    outline: none;
+    border-bottom-color: #FFFFFF;
+}
+.night-mode .terminal-button {
+    background-color: #008000; /* Dark Green */
+    color: #000000;
+    font-weight: 700;
+}
+.night-mode .terminal-button:hover {
+    background-color: #00FF00;
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   7. Template 7: Admin Tools
+   ========================================================================== */
+.admin-tool-form { font-family: var(--font-mono); }
+.admin-tool-form label { color: var(--color-night-admin); display: block; margin-bottom: 5px; }
+.admin-tool-form input { background: #111; border: 1px solid #444; color: #FFF; font-family: var(--font-mono); width: 100%; padding: 8px; }
+.admin-tool-form button { background: #333; border: 1px solid #444; color: var(--color-night-admin); }
+
+/* ==========================================================================
+   8. Template 8: Core Puzzles (Chat/Map)
+   ========================================================================== */
+.chat-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); display: grid; place-items: center; z-index: 1000; }
+.chat-window { width: 80%; height: 80%; background: #000; border: 1px solid var(--color-night-admin); padding: 20px; overflow-y: auto; font-family: var(--font-mono); color: #FFF; }
+.chat-line-ai { color: var(--color-night-error); animation: text-flicker 0.2s infinite; }
+@keyframes text-flicker { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+.server-rack-red { cursor: pointer; }
+.server-rack-red:hover { fill: #8A0000; }
+
+/* ==========================================================================
+   9. Template 9: Endings
+   ========================================================================== */
+.ending-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #000; color: #FFF; text-align: center; padding: 10px; }
+.ending-text { max-width: 800px; font-size: 1.5rem; line-height: 1.6; }
+.ending-background-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: -1; }
+.final-submit-button { background: var(--color-night-error); color: #FFF; font-size: 2rem; padding: 20px 40px; border: none; cursor: pointer; }
+
+/* ==========================================================================
+   10. Responsive Design (Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .chat-app-container, .email-app-container { width: 100%; height: 100vh; border: none; box-shadow: none; border-radius: 0; margin: 0; }
+    .player-option { padding: 15px; font-size: 1.1rem; }
+    .modal-box { width: 90vw; padding: 20px; box-shadow: none; }
+    .intranet-container { grid-template-columns: 1fr; grid-template-rows: 60px auto 1fr; grid-template-areas: "header" "nav-left" "content"; }
+    .header .global-search-bar { display: none; }
+    .nav-left { display: flex; overflow-x: auto; white-space: nowrap; padding: 10px; border-right: none; border-bottom: 1px solid var(--color-day-border); }
+    .nav-left ul { display: flex; gap: 15px; }
+    .content-area { padding: 20px; }
+    .post-list .post-item { flex-direction: column; align-items: flex-start; }
+    .post-detail h1 { font-size: 1.8rem; }
+    .post-body { font-size: 1rem; line-height: 1.6; }
+    .log-text, pre { white-space: pre-wrap; word-break: break-all; }
+    .chat-window { width: 98vw; height: 95vh; }
+    .final-submit-button { font-size: 1.2rem; padding: 15px 20px; }
+    .ending-text { font-size: 1.1rem; max-width: 90vw; }
+}.night-mode .rack-detail-button-h08,
+.night-mode .rack-detail-button-q04 { color: black !important; }
+.night-mode #access-denied-modal p { color: white; }
+
+/* Fix for Day/Night Toggle Button in Day Mode */
+#mode-toggle-button {
+    color: #4b5563; /* text-gray-600 */
+    background-color: transparent;
+}
+#mode-toggle-button:hover {
+    background-color: #f3f4f6; /* bg-gray-100 */
+}

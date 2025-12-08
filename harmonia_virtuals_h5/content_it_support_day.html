@@ -1,0 +1,91 @@
+<!-- P15: "IT 支持" 内容 (已更新) -->
+<h1 class="text-3xl font-bold text-gray-900 mb-8">🔧 IT支持中心</h1>
+
+<!-- 置顶帖子 (参考 forum.html 样式) -->
+<div class="mb-8 space-y-3">
+    <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">置顶</h2>
+    <!-- 置顶 1 (不可点击) -->
+    <div class="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg shadow-sm cursor-not-allowed">
+        <span class="text-lg">📌</span>
+        <div class="flex-1">
+            <span class="font-semibold text-blue-800">【公告】系统维护窗口期（每周日 2am - 4am）</span>
+        </div>
+    </div>
+    <!-- 置顶 2 (不可点击) -->
+    <div class="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg shadow-sm cursor-not-allowed">
+        <span class="text-lg">📌</span>
+        <div class="flex-1">
+            <span class="font-semibold text-blue-800">【指南】如何申请新的 MindLink 设备</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- 工单列表 (参考 it_support.html 样式) -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-200">
+    <!-- 论坛头部 -->
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-xl font-semibold text-gray-800">最近工单</h2>
+        <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors duration-200">
+            + 提交新工单
+        </button>
+    </div>
+
+    <!-- 帖子列表 -->
+    <div class="divide-y divide-gray-200">
+        
+        <!-- 帖子 1 (已解决) -->
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-1">
+                                                <h3 class="text-lg font-medium text-gray-500">[ 已解决 ] VPN 在家连接速度慢</h3>                <span class="flex-shrink-0 flex items-center gap-2 text-sm px-3 py-1 bg-green-100 text-green-800 rounded-full font-medium ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    已解决
+                </span>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-500 mt-2">
+                <span>提交者: <span class="font-medium text-gray-600">NetNomad</span></span>
+            </div>
+        </div>
+
+        <!-- 帖子 2 (开放 - 关键线索 P16) -->
+        <a href="#post_bug_report" class="block p-6 hover:bg-gray-50 transition-colors duration-150">
+            <div class="flex justify-between items-start mb-1">
+                                                <h3 class="text-lg font-semibold text-blue-700 hover:underline">[ 进行中 ] 奇怪的Bug：论坛帖子有红色文字闪烁？</h3>                                <span class="flex-shrink-0 flex items-center gap-2 text-sm px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full font-medium ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader"><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/><line x1="4.93" x2="7.76" y1="4.93" y2="7.76"/><line x1="16.24" x2="19.07" y1="16.24" y2="19.07"/><line x1="2" x2="6" y1="12" y2="12"/><line x1="18" x2="22" y1="12" y2="12"/><line x1="4.93" x2="7.76" y1="19.07" y2="16.24"/><line x1="16.24" x2="19.07" y1="7.76" y2="4.93"/></svg>
+                                    进行中
+                                </span>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-500 mt-2">
+                <span>提交者: <span class="font-medium text-gray-700">Lotus</span></span>
+            </div>
+        </a>
+
+        <!-- 帖子 3 (已解决) -->
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-1">
+                                                <h3 class="text-lg font-medium text-gray-500">[ 已解决 ] 58层休息室的打印机 #P-03 无法连接</h3>                <span class="flex-shrink-0 flex items-center gap-2 text-sm px-3 py-1 bg-green-100 text-green-800 rounded-full font-medium ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    已解决
+                </span>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-500 mt-2">
+                <span>提交者: <span class="font-medium text-gray-600">PixelPioneer</span></span>
+            </div>
+        </div>
+
+        <!-- 帖子 4 (已解决) -->
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-1">
+                                                <h3 class="text-lg font-medium text-gray-500">[ 已解决 ] 食堂菜单页面404</h3>                <span class="flex-shrink-0 flex items-center gap-2 text-sm px-3 py-1 bg-green-100 text-green-800 rounded-full font-medium ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    已解决
+                </span>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-500 mt-2">
+                <span>提交者: <span class="font-medium text-gray-600">ByteTraveler</span></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 结束 P15 内容 -->

@@ -1,0 +1,191 @@
+<style>
+        /* 基础字体设置 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* 黑夜模式/终端特定样式 */
+        .night-mode-text {
+            font-family: 'Roboto Mono', monospace;
+        }
+        /* 自定义滚动条 (黑夜风格) */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #15803d; /* green-700 */
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        /* 动画定义 */
+        @keyframes blink-fast {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-blink-fast {
+            animation: blink-fast 0.5s step-end infinite; /* 2Hz 闪烁 */
+        }
+        .animate-pulse-subtle {
+            animation: pulse-subtle 5s ease-in-out infinite; /* 5s 缓慢呼吸 */
+        }
+    </style>
+<!-- 动态内容区域：服务器地图 -->
+            <div id="content-area" class="night-mode-text">
+
+                <!-- 终端头部日志 -->
+                <div class="mb-8 text-sm md:text-base">
+                    <div class="text-green-700 mb-2">[ <span class="text-green-400 animate-pulse">运行中</span> //:SYS/TOOL/FILE_BROWSER ]</div>
+                    <h2 class="text-xl md:text-2xl font-bold text-green-500 mb-4 border-b border-green-900/50 pb-2">
+                        系统文件浏览器
+                    </h2>
+                    <div class="space-y-1 font-mono text-green-300 opacity-80 text-xs md:text-sm">
+                        <p>> [LOG]: 正在加载文件: //SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP</p>
+                        <p>> [LOG]: 路径验证... <span class="text-green-500 font-bold">成功</span>。</p>
+                        <p>> [LOG]: 正在渲染资源... <span class="text-green-500 font-bold">成功</span>。</p>
+                        <p>> [LOG]: 正在加载 Nexus 数据中心 - 地下3层布局 (8区域 x 8机架)...</p>
+                        <p class="mt-6 text-red-500 font-mono text-xs md:text-sm border-t border-green-900/30 pt-4 animate-pulse">> [WARNING]: 地图加载完毕。检测到 1 处严重异常。需要手动检查。</p>
+                    </div>
+                </div>
+
+                <!-- 地图容器 -->
+                <div class="bg-[#0c0c0c] border border-green-900/50 p-4 md:p-6 rounded-sm shadow-2xl shadow-green-900/5">
+                    
+                    <h3 class="text-center text-green-500 font-bold mb-6 tracking-widest border-b border-green-900/30 pb-4">
+                        NEXUS 数据中心 - 主大厅
+                    </h3>
+
+                    <!-- 8个区域的网格 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+
+                        <!-- ZONE A -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">A区 (Atlas)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[A-08]</div>
+                            </div>
+                        </div>
+
+                        <!-- ZONE B -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">B区 (Backup)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[B-08]</div>
+                            </div>
+                        </div>
+
+                        <!-- ZONE C -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">C区 (Cognitive)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[C-08]</div>
+                            </div>
+                        </div>
+
+                        <!-- ZONE D -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">D区 (Data)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[D-08]</div>
+                            </div>
+                        </div>
+
+                        <!-- ZONE H -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">H区 (Harmonia)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[H-07]</div>
+                                <a href="./H08_quarantine_log.html" class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/50 hover:text-green-300 animate-pulse-subtle font-bold" title="访问终端 H-08">[H-08]</a>
+                            </div>
+                        </div>
+
+                         <!-- ZONE N -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">N区 (Nexus)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[N-08]</div>
+                            </div>
+                        </div>
+
+                        <!-- ZONE S -->
+                        <div class="border border-green-900/30 p-3 bg-black/50">
+                            <div class="text-green-600 text-xs mb-2 font-bold">S区 (System)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-03]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-04]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[S-08]</div>
+                            </div>
+                        </div>
+
+                        <!-- ZONE Q -->
+                        <div class="border border-red-900/30 p-3 bg-red-950/10">
+                            <div class="text-red-600 text-xs mb-2 font-bold">Q区 (Quarantine)</div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-01]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-02]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-03]</div>
+                                <a href="./P39A_Dead_End.html" class="rack p-1 border border-red-500 text-red-500 text-[10px] cursor-pointer hover:bg-red-900/30 font-bold animate-blink-fast" title="严重错误 - 请勿访问">[Q-04]</a>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-05]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-06]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-07]</div>
+                                <div class="rack p-1 border border-green-800 text-green-700 text-[10px] cursor-pointer hover:bg-green-900/30 hover:text-green-400">[Q-08]</div>
+                            </div>
+                        </div>
+
+                    </div> <!-- 结束网格 -->
+
+                </div>
+
+            </div>

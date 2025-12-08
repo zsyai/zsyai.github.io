@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonia Virtuals - 欢迎</title>
+    <!-- 引入 Tailwind CSS -->
+    <link href="dist/output.css" rel="stylesheet">
+    <!-- 引入 Inter 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* bg-slate-900 */
+            color: #E2E8F0; /* text-slate-200 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 48rem; /* max-w-2xl */
+            width: 100%;
+            background-color: #1E293B; /* bg-slate-800 */
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+        }
+        .logo {
+            height: 8rem; /* h-16 */
+            margin-bottom: 1.5rem;
+        }
+        .title {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #F8FAFC; /* text-white */
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.5rem; /* text-2xl */
+            color: #94A3B8; /* text-slate-400 */
+            margin-bottom: 2.5rem;
+        }
+        .description {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75rem; /* leading-relaxed */
+            color: #CBD5E1; /* text-slate-300 */
+            margin-bottom: 2.5rem;
+        }
+        .start-button {
+            display: inline-block;
+            background-color: #3B82F6; /* bg-blue-500 */
+            color: #FFFFFF; /* text-white */
+            font-weight: 700; /* font-bold */
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-size: 1.25rem; /* text-xl */
+        }
+        .start-button:hover {
+            background-color: #2563EB; /* bg-blue-600 */
+        }
+        .nav-links {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .nav-link {
+            color: #94A3B8; /* text-slate-400 */
+            text-decoration: none;
+            font-weight: 500; /* font-medium */
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #CBD5E1; /* text-slate-300 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo_harmonia.jpg" alt="Harmonia Virtuals Logo" class="logo mx-auto">
+        <h1 class="title">和谐虚拟</h1>
+        <p class="subtitle">Harmonia Virtuals</p>
+        <p class="description">
+            欢迎入职 Harmonia Virtuals，一家致力于通过尖端 MindLink 技术重塑人类交互的全球创新领袖。<br><br>
+            这不仅仅是一份工作，更是一段探索真相的旅程。在这家表面光鲜的科技巨头内部，隐藏着不为人知的秘密。本体验包含多种结局，等待着你去层层剥茧，揭开最终的谜底。
+        </p>
+
+        <div class="text-left mb-8 p-6 bg-slate-700 rounded-lg">
+            <h2 class="text-xl font-bold text-white mb-4">玩法与目标</h2>
+            <p class="text-slate-300 text-base mb-4">
+                本游戏模拟了一个真实的企业内网环境。你需要以新员工的身份浏览公司网页和论坛、查阅内部文档，从看似正常的字里行间寻找违和之处。通过逻辑推理破解谜题、访问那些被刻意隐藏的角落，你的终极目标是拼凑出碎片化的线索，揭示这家“完美”公司背后的真实面目。
+            </p>
+            
+            <h2 class="text-xl font-bold text-white mb-4">游玩须知</h2>
+            <ul class="list-none list-inside space-y-2 text-slate-300 text-base">
+                <li><span class="font-semibold text-green-300">安心体验：</span> 本游戏专注于氛围营造，不含跳脸、惊吓、血腥等恐怖元素，请放心沉浸。</li>
+                <li><span class="font-semibold text-green-300">无需编程：</span> 您不需要具备任何编程知识。所有的操作都是通过点击、阅读、输入和逻辑推理完成的。</li>
+                <li><span class="font-semibold text-green-300">善用搜索：</span> 如果游戏中出现了您不熟悉的专业术语（如“编码”），请使用现实中的搜索引擎（如百度、Google）进行查询。</li>
+            </ul>
+        </div>
+        
+        <a href="hr_chat.html" class="start-button">开始游戏</a>
+
+    </div>
+
+    <!-- Mobile Adapter -->
+    <script src="js/mobile_adapter.js"></script>
+</body>
+</html>

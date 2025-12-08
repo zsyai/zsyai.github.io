@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - Harmonia Virtuals</title>
+    <link href="dist/output.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .header-nav { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-white text-gray-800 min-h-screen flex flex-col">
+
+    <nav class="header-nav fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="images/logo_harmonia.jpg" alt="Logo" class="h-10 w-auto rounded">
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="corp_homepage.html" class="text-gray-600 hover:text-blue-700 transition duration-300">首页</a>
+                    <a href="corp_atlas.html" class="text-gray-600 hover:text-blue-700 transition duration-300">技术</a>
+                    <a href="corp_about.html" class="text-gray-600 hover:text-blue-700 transition duration-300">关于我们</a>
+                    <a href="corp_contact.html" class="text-blue-700 font-semibold border-b-2 border-blue-700 px-1 py-2">联系我们</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative">
+                        <input type="search" id="global-search" placeholder="搜索..." class="pl-10 pr-4 py-2 w-48 border border-gray-300 rounded-full">
+                        <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-400"><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="corp_homepage.html" class="block px-3 py-2">首页</a>
+                <a href="corp_atlas.html" class="block px-3 py-2">技术</a>
+                <a href="corp_about.html" class="block px-3 py-2">关于我们</a>
+                <a href="corp_contact.html" class="text-blue-700 block px-3 py-2">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 flex-grow">
+        <!-- 1. Hero区域：Slogan -->
+        <section class="bg-blue-50 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl font-extrabold text-blue-900">与我们连接</h1>
+                
+                <p class="mt-6 text-xl text-gray-600 max-w-2xl mx-auto">
+                    我们乐于倾听来自未来的声音。
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. 页面主体：两栏布局 -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-start">
+                
+                <!-- 左栏：联系信息 -->
+                <div class->
+                    <h2 class="text-3xl font-bold text-blue-900 mb-8">全球总部</h2>
+                    
+                    <div class="space-y-6 text-lg text-gray-700">
+                        <p>
+                            <strong>Harmonia Virtuals Inc.</strong><br>
+                            A市未来大道88号Harmonia中心58-60层 <br>Floors 58-60, Harmonia Center, 88 Future Avenue, A City
+                            <br>
+                            邮编: 202500
+                        </p>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">电话</h3>
+                            <p class="text-blue-700">+86 (21) 9009-8888</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">媒体垂询</h3>
+                            <p>所有媒体和新闻相关事宜请联系：<br><span class="text-blue-700">press@harmonia.virtuals</span></p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">人才招聘</h3>
+                            <p class="text-gray-600 italic">
+                                有兴趣加入我们？（请注意：我们不接受简历投递。所有招聘均由我们的“人才发掘部”邀请进行。）
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右栏：视觉元素 (模拟地图) -->
+                <div>
+                    <img 
+                        src="images/Image_company.jpg" 
+                        alt="[一个模拟的、无法交互的地图插件，其图钉精确地插在“高科技园区1号楼”的位置]"
+                        class="w-full h-auto rounded-lg shadow-2xl border border-gray-200"
+                    >
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-blue-900 text-blue-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Harmonia Virtuals Inc. 版权所有。</p>
+            <p class="mt-4"><a href="intranet.html" class="text-blue-300 hover:text-white transition">员工入口</a></p>
+        </div>
+    </footer>
+
+    <script src="js/corp_script.js"></script>
+
+    <!-- Mobile Adapter -->
+    <script src="js/mobile_adapter.js"></script>
+</body>
+</html>
