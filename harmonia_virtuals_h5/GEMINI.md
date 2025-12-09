@@ -9,6 +9,9 @@ This document provides a comprehensive overview of the Harmonia Virtuals game, i
     *   Removed the old JavaScript `Renderers` functions for pages that are now loaded from static HTML files.
     *   Improved the CSS for night mode to provide a more immersive and consistent experience, particularly for the main intranet hub.
     *   Cleaned up various night mode pages for style, consistency, and correctness.
+*   **December 9, 2025:** Updated technical stack details.
+    *   Documented dynamic header bar injection via `js/mobile_adapter.js`.
+    *   Documented local Tailwind CSS setup and build process.
 
 ## 2. Game Design Summary
 
@@ -94,10 +97,17 @@ The project uses a hybrid architecture:
 2.  **Intranet Hub (`intranet.html`):** This is the core of the game. It acts as a Single-Page Application (SPA) shell. It contains the header, navigation, and an empty content area.
 3.  **Content Fragments:** All other pages (e.g., `content_home.html`, `content_forum_day.html`) are simple HTML snippets that are dynamically loaded into the `content-area` of the `intranet.html` hub.
 
-### Styling (`style.css`)
-- **CSS Variables:** All colors and fonts are defined as CSS variables in the `:root` selector. To change the theme, modify these variables.
+### Styling (`style.css` & Tailwind CSS)
+- **Local Tailwind CSS:** The project uses a local Tailwind CSS setup.
+    - **Source:** `src/input.css`
+    - **Output:** `dist/output.css`
+    - **Build Command:** `npm run build:css` (or `npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch`)
+    - **Usage:** All standalone HTML pages should link to `dist/output.css` instead of using the CDN.
+- **CSS Variables (`style.css`):** All colors and fonts are defined as CSS variables in the `:root` selector. To change the theme, modify these variables.
 - **Day/Night Mode:** The entire theme is controlled by adding or removing the `.night-mode` class to the `<body>` tag. All night-mode-specific styles are defined under a `.night-mode` selector.
-- **Templates:** The CSS is organized into sections corresponding to the 10 design templates. When creating or modifying a page, refer to the appropriate template section for class names and structure.
+
+### Dynamic Components (`js/mobile_adapter.js`)
+- **Header Bar:** A mobile-friendly, dynamic header bar is automatically injected into pages by including the `js/mobile_adapter.js` script at the end of the `<body>` tag. This ensures consistent navigation across standalone pages without manual duplication.
 
 ### JavaScript (`script.js`)
 The main script is organized into several key objects:

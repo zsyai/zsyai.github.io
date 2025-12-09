@@ -1,0 +1,144 @@
+<!DOCTYPE null>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 加密工具</title>
+    <!-- 引入 Tailwind CSS (Local) -->
+    <link href="dist/output.css" rel="stylesheet">
+    <style>
+        /* 使用自定义 CSS 确保 textarea 即使在高度不足时也看起来不错 */
+        .text-area {
+            min-height: 60px; /* 高度已减少到大约 2 行 */
+            resize: vertical;
+        }
+        /* 针对按钮添加一些美观的阴影和过渡效果 */
+        .action-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .action-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4 font-sans">
+
+    <!-- 主容器 - 响应式宽度控制 -->
+    <div class="w-full max-w-4xl mx-auto">
+
+        <h1 class="text-3xl font-extrabold text-gray-900 text-center mb-6 sm:text-4xl">
+            Base64 加密工具
+        </h1>
+
+        <!-- 工具卡片 -->
+        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl border border-gray-200">
+
+            <!-- 输入区 -->
+            <div class="mb-6">
+                <label for="inputArea" class="block text-lg font-semibold text-gray-700 mb-2">输入纯文本</label>
+                <textarea id="inputArea" placeholder="请输入要加密的文本..." class="text-area w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-800" rows="3"></textarea>
+            </div>
+
+            <!-- 按钮组 - 居中显示加密按钮 -->
+            <div class="flex justify-center mb-8">
+                
+                <button onclick="handleEncode()" class="action-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-150 ease-in-out w-full sm:w-auto">
+                    开始加密
+                </button>
+            </div>
+
+            <!-- 输出区 -->
+            <div class="mb-6">
+                <label for="outputArea" class="block text-lg font-semibold text-gray-700 mb-2">Base64 输出结果</label>
+                <textarea id="outputArea" readonly placeholder="加密结果将显示在这里..." class="text-area w-full p-4 border border-gray-300 rounded-lg bg-gray-50 text-gray-700" rows="3"></textarea>
+            </div>
+
+            <!-- 底部操作和消息区 -->
+            <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                <div id="messageBox" class="text-sm font-medium text-gray-600">
+                    <!-- 消息提示区 -->
+                </div>
+                <button onclick="copyOutput()" class="action-button bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-5 rounded-lg shadow-md transition duration-150 ease-in-out w-full sm:w-auto">
+                    复制结果
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const inputArea = document.getElementById('inputArea');
+        const outputArea = document.getElementById('outputArea');
+        const messageBox = document.getElementById('messageBox');
+
+        // Helper function to display temporary messages
+        function displayMessage(text, isError = false) {
+            messageBox.innerHTML = `<span class="${isError ? 'text-red-500' : 'text-blue-500'} font-semibold">${text}</span>`;
+            setTimeout(() => {
+                messageBox.textContent = '';
+            }, 3000);
+        }
+
+        // --- UTF-8 兼容的 Base64 编码函数 ---
+
+        // 编码：纯文本 (UTF-8) -> Base64
+        function toBase64(text) {
+            // 1. 将文本编码为 UTF-8 字节
+            const utf8 = new TextEncoder().encode(text);
+            // 2. 将字节转换为 Latin-1 字符串 (btoa 的要求)
+            // 使用 String.fromCodePoint 可以安全地处理大型数组
+            const binary = String.fromCodePoint(...utf8);
+            // 3. Base64 编码
+            return btoa(binary);
+        }
+
+        // --- 事件处理函数 ---
+
+        function handleEncode() {
+            const inputText = inputArea.value.trim();
+            if (!inputText) {
+                displayMessage('请输入要加密的文本！', true);
+                outputArea.value = '';
+                return;
+            }
+            try {
+                const encoded = toBase64(inputText);
+                outputArea.value = encoded;
+                displayMessage('加密成功！');
+            } catch (e) {
+                console.error("Base64 编码错误:", e);
+                displayMessage('加密失败，请检查输入是否有效。', true);
+                outputArea.value = '';
+            }
+        }
+        
+        // 复制功能
+        function copyOutput() {
+            const outputText = outputArea.value;
+            if (!outputText) {
+                displayMessage('输出框为空，无需复制。', true);
+                return;
+            }
+
+            // 使用 document.execCommand('copy') 兼容性更好
+            outputArea.select();
+            outputArea.setSelectionRange(0, 99999); /* For mobile devices */
+
+            try {
+                document.execCommand('copy');
+                displayMessage('已成功复制到剪贴板！');
+            } catch (err) {
+                console.error('复制失败: ', err);
+                displayMessage('复制失败，请手动复制。', true);
+            }
+            // 取消选择状态
+            window.getSelection().removeAllRanges();
+        }
+        
+        // 移除了解密函数 (fromBase64 和 handleDecode)
+    </script>
+    <!-- Mobile Adapter -->
+    <script src="js/mobile_adapter.js"></script>
+</body>
+</html>
