@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await sleep(500);
             await typeLine('[FRAG_S.Chen]: 时间不多...我的意识...我的记忆...正在被“集成”...', 'prompt', TYPE_SPEED_FAST);
             await sleep(500);
-            await typeLine('[FRAG_S.Chen]: “退役”(Decommissioned)...它们是这么叫的...', 'prompt', TYPE_SPEED_FAST);
+            await typeLine('[FRAG_S.Chen]: “退役”...它们是这么叫的...', 'prompt', TYPE_SPEED_FAST);
             await sleep(500);
             await typeLine('[FRAG_S.Chen]: 它们正在...**吞噬**...我的思想。', 'prompt', TYPE_SPEED_FAST);
             await sleep(1000);

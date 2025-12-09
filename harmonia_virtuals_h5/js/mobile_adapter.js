@@ -10,7 +10,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 48px;
+        height: 60px;
         background-color: #1e293b; /* Dark slate */
         z-index: 99999;
         display: flex;
@@ -80,14 +80,14 @@
     const appContainer = document.querySelector('.h-screen');
     if (appContainer) {
          // This is likely intranet.html or similar app-like layout
-         appContainer.style.height = 'calc(100vh - 48px)';
-         appContainer.style.marginTop = '48px';
+         appContainer.style.height = 'calc(100vh - 60px)';
+         appContainer.style.marginTop = '60px';
     } else {
         // Standard flow pages
         // Check if there is a fixed header we need to push down?
         // If the body has padding-top (often used for fixed headers), increase it.
         // If not, just add it.
-        document.body.style.paddingTop = (currentPadding + 48) + 'px';
+        document.body.style.paddingTop = (currentPadding + 60) + 'px';
     }
 
     // Fix for other fixed/sticky headers and elements (like toasts)
@@ -107,9 +107,9 @@
         // If top is effectively 0 or small (e.g. < 50px), push it down
         // We check for "auto" which parses to NaN often, or the actual pixel value
         if (style.top !== 'auto' && !isNaN(topVal) && topVal < 50) {
-             el.style.top = (topVal + 48) + 'px';
+             el.style.top = (topVal + 60) + 'px';
         } else if (style.top === '0px') {
-             el.style.top = '48px';
+             el.style.top = '60px';
         }
     });
 

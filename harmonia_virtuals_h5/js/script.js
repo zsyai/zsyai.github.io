@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			                                            if (modal) {
 			                                                modal.classList.add('hidden');
 			                                            }
-			                                            window.location.href = 'H08_quarantine_log.html';
+			                                            window.location.href = 'h08_quarantine_log.html';
 			                                        }, 2000); // 2 second delay
 			                                    });
 			                                }
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       if (rackId === 'Q-04') {
                           serverType = 'Quantum Cognitive Core (Mk. IV)';
                           coreId = 'NEXUS-QUARANTINE-004';
-                          detailButtonHTML = `<a href="./P39A_Dead_End.html" class="rack-detail-button-q04 mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400 transition-colors text-sm font-bold">查看严重错误</a>`;
+                          detailButtonHTML = `<a href="./p39a_dead_end.html" class="rack-detail-button-q04 mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400 transition-colors text-sm font-bold">查看严重错误</a>`;
                       } else {
                           const [zone, number] = rackId.split('-');
                           const zoneFullName = zoneNameMapping[zone] || 'UNKNOWN';
