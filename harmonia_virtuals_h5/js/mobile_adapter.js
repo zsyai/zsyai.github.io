@@ -7,15 +7,15 @@
     topBar.id = 'mobile-top-bar';
     
     // We use a combination of standard CSS and env() for safe area support.
-    // The height includes the base 60px plus the safe area inset.
+    // The height includes the base 80px plus the safe area inset.
     // Padding top ensures the content (back button, etc.) starts below the notch.
     topBar.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 60px; /* Fallback */
-        height: calc(60px + env(safe-area-inset-top));
+        height: 80px; /* Fallback */
+        height: calc(80px + env(safe-area-inset-top));
         background-color: #1e293b; /* Dark slate */
         z-index: 99999;
         display: flex;
@@ -86,20 +86,20 @@
     const appContainer = document.querySelector('.h-screen');
     if (appContainer) {
          // This is likely intranet.html or similar app-like layout
-         appContainer.style.height = 'calc(100vh - 60px)'; // Fallback
-         appContainer.style.height = 'calc(100vh - (60px + env(safe-area-inset-top)))';
+         appContainer.style.height = 'calc(100vh - 80px)'; // Fallback
+         appContainer.style.height = 'calc(100vh - (80px + env(safe-area-inset-top)))';
          
-         appContainer.style.marginTop = '60px'; // Fallback
-         appContainer.style.marginTop = 'calc(60px + env(safe-area-inset-top))';
+         appContainer.style.marginTop = '80px'; // Fallback
+         appContainer.style.marginTop = 'calc(80px + env(safe-area-inset-top))';
     } else {
         // Standard flow pages
         // We add our bar height to the existing padding
         if (currentPadding === 0) {
-             document.body.style.paddingTop = '60px'; // Fallback
-             document.body.style.paddingTop = 'calc(60px + env(safe-area-inset-top))';
+             document.body.style.paddingTop = '80px'; // Fallback
+             document.body.style.paddingTop = 'calc(80px + env(safe-area-inset-top))';
         } else {
              document.body.style.paddingTop = (currentPadding + 60) + 'px'; // Fallback
-             document.body.style.paddingTop = `calc(${currentPadding}px + 60px + env(safe-area-inset-top))`;
+             document.body.style.paddingTop = `calc(${currentPadding}px + 80px + env(safe-area-inset-top))`;
         }
     }
 
@@ -121,10 +121,10 @@
         // We check for "auto" which parses to NaN often, or the actual pixel value
         if (style.top !== 'auto' && !isNaN(topVal) && topVal < 50) {
              el.style.top = (topVal + 60) + 'px'; // Fallback
-             el.style.top = `calc(${topVal}px + 60px + env(safe-area-inset-top))`;
+             el.style.top = `calc(${topVal}px + 80px + env(safe-area-inset-top))`;
         } else if (style.top === '0px') {
-             el.style.top = '60px'; // Fallback
-             el.style.top = 'calc(60px + env(safe-area-inset-top))';
+             el.style.top = '80px'; // Fallback
+             el.style.top = 'calc(80px + env(safe-area-inset-top))';
         }
     });
 

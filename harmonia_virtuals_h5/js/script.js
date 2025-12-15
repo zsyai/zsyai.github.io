@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   const fileBrowserForm = document.getElementById('file-browser-form');
                   const filePathInput = document.getElementById('file-path');
                   const messageArea = document.getElementById('message-area');
-                  const correctPath = "//SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP";
+                  const correctPath = "//SYSTEM/QZONE_LAYOUT.MAP";
 
                   if (fileBrowserForm) {
                       fileBrowserForm.addEventListener('submit', function(event) {
