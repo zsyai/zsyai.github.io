@@ -38,11 +38,11 @@ body {
 
 a { color: var(--color-day-primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
-button, .button {
+:where(button):not([class*="bg-"]), .button {
     background-color: var(--color-day-primary); color: white; padding: 10px 15px; border: none;
     border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.3s;
 }
-button:hover, .button:hover { background-color: #0056b3; }
+:where(button):not([class*="bg-"]):hover, .button:hover { background-color: #0056b3; }
 
 /* Toast Notification */
 #toast {

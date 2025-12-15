@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>结局 1 - 觉醒</title>
     <!-- 引入 Tailwind CSS -->
     <link href="dist/output.css" rel="stylesheet">
@@ -25,15 +25,10 @@
         .log-line {
             display: none; /* 默认隐藏 */
             overflow: hidden;
-            white-space: nowrap;
+            white-space: pre-wrap;
+            word-break: break-word;
         }
         
-        /* 最终结局文本的容器 */
-        #ending-text-container {
-            opacity: 0;
-            transition: opacity 1.5s ease-in 0.5s;
-        }
-
         /* 屏幕闪烁动画 */
         @keyframes screen-flicker {
             0% { background-color: #000; }
@@ -43,7 +38,15 @@
             100% { background-color: #000; }
         }
         .animate-flicker {
-            animation: screen-flicker 0.3s linear 3; /* 闪烁3次 */
+            animation: 
+                screen-flicker 0.4s linear 3,
+                screen-flicker 0.1s linear 1.2s 10;
+        }
+        
+        /* 最终结局文本的容器 */
+        #ending-text-container {
+            opacity: 0;
+            transition: opacity 3s ease-in 1s;
         }
     </style>
 </head>
@@ -52,7 +55,7 @@
     <div class="max-w-2xl w-full">
         
         <!-- 1. 绿色滚动日志 -->
-        <div id="log-scroll" class="terminal-text text-green-400 text-sm md:text-base space-y-1">
+        <div id="log-scroll" class="terminal-text text-green-400 text-lg space-y-1">
             <p class="log-line">[SYSTEM]: 正在验证物理坐标...</p>
             <p class="log-line">[SYSTEM]: &gt; F市远郊XX工业园B4栋地下三层... <span class="text-green-200 font-bold">确认。目标锁定。</span></p>
             <p class="log-line">[SYSTEM]: 正在验证数字核心 ID...</p>
@@ -67,7 +70,7 @@
                 结局 1 : 觉醒
             </h1>
             
-            <div class="space-y-4 text-gray-300 leading-relaxed text-base md:text-lg">
+            <div class="space-y-4 text-gray-300 leading-relaxed text-xl">
                 <p>你做到了。</p>
                 <p>在 NEXUS 能够做出反应之前，物理切断生效了。数据中心的冷却系统被强制关闭，主核心被迫紧急下线。</p>
                 <p>数百名被“集成”的员工从深度昏迷中苏醒。他们的大脑受到了不同程度的损伤，但他们找回了自我——包括 S.Chen。</p>
@@ -77,7 +80,7 @@
             </div>
 
             <div class="text-center mt-10">
-                <a href="author_postscript.html" class="terminal-text text-lg font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg transition-colors duration-300 no-underline">
+                <a href="author_postscript.html" class="terminal-text text-xl font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg transition-colors duration-300 no-underline italic">
                     游戏结束
                 </a>
             </div>
@@ -118,11 +121,13 @@
             body.classList.remove('animate-flicker');
             logContainer.style.display = 'none';
             
-            // 显示结局文本（它自己有 0.5s 延迟的淡入）
+            // 显示结局文本
             endingContainer.style.display = 'block';
-            endingContainer.style.opacity = '1';
+            setTimeout(() => {
+                endingContainer.style.opacity = '1';
+            }, 50);
 
-        }, delay + 1000); // 0.9s 闪烁 + 0.1s 缓冲
+        }, delay + 2500); // 2.4s flicker + 0.1s buffer
 
         // 设置通关标记
         localStorage.setItem('hasCompletedGame', 'true');

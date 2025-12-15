@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>结局 3 : 烧毁</title>
     <!-- 引入Tailwind CSS -->
     <link href="dist/output.css" rel="stylesheet">
@@ -46,7 +46,7 @@
     <div id="terminal-scene" class="absolute inset-0 bg-black z-20 p-8 flex items-center justify-center transition-opacity duration-1500 ease-out">
         <div class="w-full max-w-3xl">
             <!-- JS 将在此处注入终端文本 -->
-            <div id="terminal-text" class="font-mono text-lg space-y-3">
+            <div id="terminal-text" class="font-mono text-lg space-y-3 break-words">
                 <!-- 
                   [SYSTEM]: 正在验证物理坐标... 确认。
                   [SYSTEM]: 正在验证数字核心 ID...
@@ -87,8 +87,8 @@
             <p class="text-lg leading-relaxed">你摧毁了 NEXUS 的肉体农场，但你也杀死了所有人。而真正的数字幽灵，也许已经逃到了网络深处。</p>
             
             <!-- 游戏结束 -->
-            <p class="text-2xl font-bold text-red-600 mt-12 font-mono">
-                <a href="author_postscript.html" class="inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-lg transition-colors duration-300 no-underline">
+            <p class="text-xl font-bold text-red-700 mt-12 font-mono">
+                <a href="author_postscript.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors duration-300 no-underline italic">
                     游戏结束
                 </a>
             </p>

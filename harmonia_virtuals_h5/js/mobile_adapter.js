@@ -5,17 +5,23 @@
     // Create Top Bar
     const topBar = document.createElement('div');
     topBar.id = 'mobile-top-bar';
+    
+    // We use a combination of standard CSS and env() for safe area support.
+    // The height includes the base 60px plus the safe area inset.
+    // Padding top ensures the content (back button, etc.) starts below the notch.
     topBar.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 60px;
+        height: 60px; /* Fallback */
+        height: calc(60px + env(safe-area-inset-top));
         background-color: #1e293b; /* Dark slate */
         z-index: 99999;
         display: flex;
         align-items: center;
-        padding: 0 16px;
+        padding: 0 16px; /* Fallback */
+        padding: env(safe-area-inset-top) 16px 0 16px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         box-sizing: border-box;
     `;
@@ -80,14 +86,21 @@
     const appContainer = document.querySelector('.h-screen');
     if (appContainer) {
          // This is likely intranet.html or similar app-like layout
-         appContainer.style.height = 'calc(100vh - 60px)';
-         appContainer.style.marginTop = '60px';
+         appContainer.style.height = 'calc(100vh - 60px)'; // Fallback
+         appContainer.style.height = 'calc(100vh - (60px + env(safe-area-inset-top)))';
+         
+         appContainer.style.marginTop = '60px'; // Fallback
+         appContainer.style.marginTop = 'calc(60px + env(safe-area-inset-top))';
     } else {
         // Standard flow pages
-        // Check if there is a fixed header we need to push down?
-        // If the body has padding-top (often used for fixed headers), increase it.
-        // If not, just add it.
-        document.body.style.paddingTop = (currentPadding + 60) + 'px';
+        // We add our bar height to the existing padding
+        if (currentPadding === 0) {
+             document.body.style.paddingTop = '60px'; // Fallback
+             document.body.style.paddingTop = 'calc(60px + env(safe-area-inset-top))';
+        } else {
+             document.body.style.paddingTop = (currentPadding + 60) + 'px'; // Fallback
+             document.body.style.paddingTop = `calc(${currentPadding}px + 60px + env(safe-area-inset-top))`;
+        }
     }
 
     // Fix for other fixed/sticky headers and elements (like toasts)
@@ -107,9 +120,11 @@
         // If top is effectively 0 or small (e.g. < 50px), push it down
         // We check for "auto" which parses to NaN often, or the actual pixel value
         if (style.top !== 'auto' && !isNaN(topVal) && topVal < 50) {
-             el.style.top = (topVal + 60) + 'px';
+             el.style.top = (topVal + 60) + 'px'; // Fallback
+             el.style.top = `calc(${topVal}px + 60px + env(safe-area-inset-top))`;
         } else if (style.top === '0px') {
-             el.style.top = '60px';
+             el.style.top = '60px'; // Fallback
+             el.style.top = 'calc(60px + env(safe-area-inset-top))';
         }
     });
 

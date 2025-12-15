@@ -209,14 +209,16 @@ document.addEventListener('DOMContentLoaded', () => {
             addLine('[ < CONNECTION STABILIZED. ]', 'log');
             await sleep(300);
             addLine('[ < CHANNEL MONITORING ACTIVATED. ]', 'log');
-            addLine('<a href="intranet.html#encrypted_communication" class="text-blue-400 hover:underline hover:text-blue-300">&gt; 返回加密通讯界面</a>', 'log');
 
         } else {
-            addLine('[ < PASSWORD DENIED ]', 'log error');
+            inputArea.remove();
+            addLine('[ < ANSWER REJECTED ]', 'log error');
+            chatLog.appendChild(inputArea);
             textInput.value = '';
             textInput.disabled = false;
             verifyButton.disabled = false;
             textInput.focus();
+            scrollToBottom();
         }
     }
 
@@ -235,7 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(500);
         await typeLine('[FRAG_S.Chen]: “我” 和 “我们” 的最终区别是什么？', 'prompt');
         
-        inputArea.style.display = 'block';
+        chatLog.appendChild(inputArea);
+        inputArea.style.display = 'flex';
+        scrollToBottom();
         textInput.focus();
     }
 

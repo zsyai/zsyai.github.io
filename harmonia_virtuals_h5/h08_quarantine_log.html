@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>节点 H-08 原始数据流</title>
     <!-- 引入 Tailwind CSS -->
     <link href="dist/output.css" rel="stylesheet">
@@ -76,12 +76,7 @@
             <p class="text-gray-500">(连接自动终止中...)</p>
             <p id="session-terminated" class="text-red-600 font-bold">[ 会话已被主机终止 ]</p>
             
-            <!-- 新增的返回链接 -->
-            <p id="return-link" class="mt-4" style="display: none;">
-                <a href="intranet.html#file_browser" class="text-blue-400 hover:underline hover:text-blue-300">
-                    &gt; 返回文件浏览器
-                </a>
-            </p>
+
         </div>
 
         <div id="cursor-element" class="h-8">
@@ -93,7 +88,7 @@
         const logContainer = document.getElementById('log-container');
         const sessionTerminated = document.getElementById('session-terminated');
         const cursorElement = document.getElementById('cursor-element');
-        const returnLink = document.getElementById('return-link'); // 获取新链接
+
 
         // 启动时，光标闪烁
         cursorElement.classList.add('cursor-blink');
@@ -103,8 +98,7 @@
             // 显示终止信息
             sessionTerminated.style.opacity = '1';
 
-            // 显示返回链接
-            returnLink.style.display = 'block';
+
 
             // 停止光标闪烁
             cursorElement.classList.remove('cursor-blink');

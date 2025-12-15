@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>S.O.S. 安全后门</title>
     <!-- 引入 Tailwind CSS -->
     <link href="dist/output.css" rel="stylesheet">
@@ -72,7 +72,7 @@
     <div class="w-full max-w-lg">
         
         <!-- Retro ASCII Header (已更新) -->
-        <pre class="terminal-header text-sm md:text-base whitespace-pre-wrap word-break-all text-center font-bold mb-6">
+        <pre class="terminal-header text-sm md:text-base whitespace-pre-wrap word-break-all text-center font-bold mb-4 leading-none">
         /--------------\     
       / ############### \    
      / ### .-------. ### \   
@@ -95,7 +95,7 @@
         </pre>
 
         <!-- 新增的警告文案 -->
-        <div id="warning-logs" class="space-y-1 text-sm mb-6 text-left whitespace-pre-wrap word-break-all font-mono">
+        <div id="warning-logs" class="space-y-0 text-sm mb-4 text-left whitespace-pre-wrap word-break-all font-mono leading-tight">
             <p class="text-gray-400">[UNKNOWN]: 通道已临时打开</p>
             <p class="terminal-header font-bold">[UNKNOWN]: !! 最终警告 !!</p>
             <p class="text-gray-400">[UNKNOWN]: 无论发送成功或失败，此通道在数据包（你的证据）发送后都将永久性销毁</p>
@@ -104,11 +104,11 @@
             <p class="terminal-log-wait mt-4">[UNKNOWN]: 等待输入...</p>
         </div>
 
-        <form id="sos-form" class="space-y-6">
+        <form id="sos-form" class="space-y-4">
             
             <!-- GDD P40: [输入框1：物理目标位置 (地址)] -->
             <div>
-                <label for="physical-address" class="block text-sm font-medium mb-2 terminal-prompt">
+                <label for="physical-address" class="block text-sm font-medium mb-1 terminal-prompt">
                     >> 输入 机房物理位置 (不含空格):
                 </label>
                 <input type="text" id="physical-address" name="physical-address" 
@@ -118,7 +118,7 @@
 
             <!-- GDD P40: [输入框2：数字核心识别码 (服务器ID)] -->
             <div>
-                <label for="core-id" class="block text-sm font-medium mb-2 terminal-prompt">
+                <label for="core-id" class="block text-sm font-medium mb-1 terminal-prompt">
                     >> 输入 数字核心识别码:
                 </label>
                 <input type="text" id="core-id" name="core-id" 
