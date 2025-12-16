@@ -1,5 +1,6 @@
 /**
  * Harmonia Virtuals - Core Game Logic (v3 - Refined UI)
+ * Updated to use Template-based routing (No Fetch)
  */
 document.addEventListener('DOMContentLoaded', () => {
       // --- 1. STATE MANAGEMENT ---
@@ -18,87 +19,88 @@ document.addEventListener('DOMContentLoaded', () => {
       // --- 2. ROUTER & CONTENT LOADER ---
       const contentRoutes = {
           'home': {
-              day: { url: 'content_home_day.html', title: '我的工作台' },
-              night: { url: 'content_home_night.html', title: '[LOG] USER_DASHBOARD' },
-              admin_day: { url: 'content_home_admin_day.html', title: '管理员工作台' },
-              admin_night: { url: 'content_home_admin_night.html', title: '[LOG] ADMIN_DASHBOARD' }
+              day: { templateId: 'tmpl_home_day', title: '我的工作台' },
+              night: { templateId: 'tmpl_home_night', title: '[LOG] USER_DASHBOARD' },
+              admin_day: { templateId: 'tmpl_home_admin_day', title: '管理员工作台' },
+              admin_night: { templateId: 'tmpl_home_admin_night', title: '[LOG] ADMIN_DASHBOARD' }
           },
           'forum': {
-              day: { url: 'content_forum_day.html', title: '社区中心' },
-              night: { url: 'content_forum_night.html', title: '[LOG] 社区中心' },
-              admin_night: { url: 'content_forum_admin_night.html', title: '[ADMIN] 社区中心' }
+              day: { templateId: 'tmpl_forum_day', title: '社区中心' },
+              night: { templateId: 'tmpl_forum_night', title: '[LOG] 社区中心' },
+              admin_night: { templateId: 'tmpl_forum_admin_night', title: '[ADMIN] 社区中心' }
           },
-                  'devblog': {
-                      day: { url: 'content_dev_blog_integration.html', title: 'Project Atlas 博客' },
-                      night: { url: 'content_dev_blog_integration_night.html', title: '[LOG] Project_Atlas_Blog_Decompiled' },
-                      admin_night: { url: 'content_dev_blog_integration_admin_night.html', title: '[LOG] Project_Atlas_Blog_Decompiled' }
-                  },
-                  'it_support': {
-                      day: { url: 'content_it_support_day.html', title: 'IT 支持' },
-                      night: { url: 'content_it_support_night.html', title: 'IT 支持' },
-                      admin_night: { url: 'content_it_support_admin_night.html', title: '[ADMIN] IT 支持' }
-                  },
-                  'it_ticket_8841': {
-                      day: { url: 'content_it_ticket_8841.html', title: 'IT 支持工单 #8841' },
-                      night: { url: 'content_it_ticket_8841_night.html', title: '[LOG] IT Ticket #8841' }
-                  },
-                  'base64_vulnerability': { url: 'content_base64_vulnerability_night.html', title: '【特别重大】安全漏洞' },
-                  'post_mindlink': {
-                      day: { url: 'content_post_mindlink_day.html', title: '帖子详情' },
-                      night: { url: 'content_post_mindlink_night.html', title: '[LOG] MindLink Session' }
-                  },
-                  'post_philosophy': {
-                      day: { url: 'content_post_philosophy.html', title: '帖子详情' },
-                      night: { url: 'content_post_philosophy_night.html', title: '[LOG] Philosophy Discussion' }
-                  },
-                  'post_award': {
-                      day: { url: 'content_post_award.html', title: '帖子详情' },
-                      night: { url: 'content_post_award_night.html', title: '[LOG] Subject_S.Chen: Decommissioned' },
-                      admin_night: { url: 'content_post_award_admin_night.html', title: '[LOG] Subject_S.Chen: Decommissioned' }
-                  },
-                  'post_art_contest': {
-                      day: { url: 'content_post_art_contest.html', title: '帖子详情' },
-                      night: { url: 'content_post_art_contest_night.html', title: '[LOG] AI Art Contest Results' },
-                      admin_night: { url: 'content_post_art_contest_admin_night.html', title: '[LOG] AI Art Contest Results' }
-                  },
-                  'post_dark_mode_joke': {
-                      day: { url: 'content_post_dark_mode_joke.html', title: '帖子详情' },
-                      night: { url: 'content_post_dark_mode_joke_night.html', title: '[LOG] Dark Mode Joke' }
-                  },
-                          'post_bug_report': {
-                              day: { url: 'content_post_bug_report_day.html', title: '帖子详情' },
-                              night: { url: 'content_post_bug_report_night.html', title: '帖子详情' }
-                          },
-                  'post_canteen': {
-                      day: { url: 'content_post_canteen.html', title: '帖子详情' },
-                      night: { url: 'content_post_canteen_night.html', title: '[LOG] Canteen_Chemical_Analysis' },
-                      admin_night: { url: 'content_post_canteen_admin_night.html', title: '[LOG] Canteen_Chemical_Analysis' }
-                  },
-                                  'admin_tools': {
-          day: { url: 'content_admin_tools_day.html', title: '管理员工具' },
-          night: { url: 'content_admin_tools_night.html', title: '[LOG] 管理员工具' }
-      },
-                                  'encrypted_communication': {
-                                      day: { url: 'content_encrypted_communication_day.html', title: '加密通讯' },
-                                      night: { url: 'content_encrypted_communication_night.html', title: '加密通讯' }
-                                  },
-                                  'file_browser': {
-                                      day: { url: 'content_file_browser_day.html', title: '系统文件浏览器' },
-                                      night: { url: 'content_file_browser_night.html', title: '系统文件浏览器' }
-                                  },
-                          'sys_map_view_qzone_7456': {
-              day: { url: 'content_quarantine_map_day.html', title: '隔离区地图' },
-              night: { url: 'content_quarantine_map_night.html', title: '[LOG] QUARANTINE_ZONE_MAP' }
+          'devblog': {
+              day: { templateId: 'tmpl_devblog_day', title: 'Project Atlas 博客' },
+              night: { templateId: 'tmpl_devblog_night', title: '[LOG] Project_Atlas_Blog_Decompiled' },
+              admin_night: { templateId: 'tmpl_devblog_admin_night', title: '[LOG] Project_Atlas_Blog_Decompiled' }
           },
-                          'emergency_broadcast': { url: 'content_emergency_broadcast.html', title: '紧急广播协议' },
-                          'profile_settings': {
-                              day: { url: 'content_profile_settings_day.html', title: '个人资料设置' },
-                              night: { url: 'content_profile_settings_night.html', title: '[LOG] USER_PROFILE' },
-                              admin_day: { url: 'content_profile_settings_admin_day.html', title: '管理员资料设置' },
-                                          admin_night: { url: 'content_profile_settings_admin_night.html', title: '[LOG] ADMIN_PROFILE' }
-                                      },
-                                  };
-      async function loadContent(hash) {
+          'it_support': {
+              day: { templateId: 'tmpl_it_support_day', title: 'IT 支持' },
+              night: { templateId: 'tmpl_it_support_night', title: 'IT 支持' },
+              admin_night: { templateId: 'tmpl_it_support_admin_night', title: '[ADMIN] IT 支持' }
+          },
+          'it_ticket_8841': {
+              day: { templateId: 'tmpl_it_ticket_8841_day', title: 'IT 支持工单 #8841' },
+              night: { templateId: 'tmpl_it_ticket_8841_night', title: '[LOG] IT Ticket #8841' }
+          },
+          'base64_vulnerability': { templateId: 'tmpl_base64_vulnerability_night', title: '【特别重大】安全漏洞' },
+          'post_mindlink': {
+              day: { templateId: 'tmpl_post_mindlink_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_mindlink_night', title: '[LOG] MindLink Session' }
+          },
+          'post_philosophy': {
+              day: { templateId: 'tmpl_post_philosophy_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_philosophy_night', title: '[LOG] Philosophy Discussion' }
+          },
+          'post_award': {
+              day: { templateId: 'tmpl_post_award_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_award_night', title: '[LOG] Subject_S.Chen: Decommissioned' },
+              admin_night: { templateId: 'tmpl_post_award_admin_night', title: '[LOG] Subject_S.Chen: Decommissioned' }
+          },
+          'post_art_contest': {
+              day: { templateId: 'tmpl_post_art_contest_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_art_contest_night', title: '[LOG] AI Art Contest Results' },
+              admin_night: { templateId: 'tmpl_post_art_contest_admin_night', title: '[LOG] AI Art Contest Results' }
+          },
+          'post_dark_mode_joke': {
+              day: { templateId: 'tmpl_post_dark_mode_joke_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_dark_mode_joke_night', title: '[LOG] Dark Mode Joke' }
+          },
+          'post_bug_report': {
+              day: { templateId: 'tmpl_post_bug_report_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_bug_report_night', title: '帖子详情' }
+          },
+          'post_canteen': {
+              day: { templateId: 'tmpl_post_canteen_day', title: '帖子详情' },
+              night: { templateId: 'tmpl_post_canteen_night', title: '[LOG] Canteen_Chemical_Analysis' },
+              admin_night: { templateId: 'tmpl_post_canteen_admin_night', title: '[LOG] Canteen_Chemical_Analysis' }
+          },
+          'admin_tools': {
+              day: { templateId: 'tmpl_admin_tools_day', title: '管理员工具' },
+              night: { templateId: 'tmpl_admin_tools_night', title: '[LOG] 管理员工具' }
+          },
+          'encrypted_communication': {
+              day: { templateId: 'tmpl_encrypted_communication_day', title: '加密通讯' },
+              night: { templateId: 'tmpl_encrypted_communication_night', title: '加密通讯' }
+          },
+          'file_browser': {
+              day: { templateId: 'tmpl_file_browser_day', title: '系统文件浏览器' },
+              night: { templateId: 'tmpl_file_browser_night', title: '系统文件浏览器' }
+          },
+          'sys_map_view_qzone_7456': {
+              day: { templateId: 'tmpl_sys_map_view_qzone_7456_day', title: '隔离区地图' },
+              night: { templateId: 'tmpl_sys_map_view_qzone_7456_night', title: '[LOG] QUARANTINE_ZONE_MAP' }
+          },
+          'emergency_broadcast': { templateId: 'tmpl_emergency_broadcast', title: '紧急广播协议' },
+          'profile_settings': {
+              day: { templateId: 'tmpl_profile_settings_day', title: '个人资料设置' },
+              night: { templateId: 'tmpl_profile_settings_night', title: '[LOG] USER_PROFILE' },
+              admin_day: { templateId: 'tmpl_profile_settings_admin_day', title: '管理员资料设置' },
+              admin_night: { templateId: 'tmpl_profile_settings_admin_night', title: '[LOG] ADMIN_PROFILE' }
+          },
+      };
+
+      function loadContent(hash) {
           const page = hash || 'home';
           const contentArea = document.getElementById('content-area');
           const routeDef = contentRoutes[page];
@@ -134,19 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
               route = (isNight && routeDef.night) ? routeDef.night : (routeDef.day || routeDef);
           }
 
-          try {
-              const response = await fetch(route.url);
-              if (!response.ok) throw new Error(`Content not found for route: ${page}`);
-              contentArea.innerHTML = await response.text();
-              
-              if (page === 'forum') {
-                  localStorage.setItem('visited_forum', 'true');
-              }
+          if (route && route.templateId) {
+              const template = document.getElementById(route.templateId);
+              if (template) {
+                  contentArea.innerHTML = template.innerHTML;
+                  
+                  if (page === 'forum') {
+                      localStorage.setItem('visited_forum', 'true');
+                  }
 
-              UI.updateAll(page);
-              UI.markTasksAsCompleted();
-          } catch (error) {
-              contentArea.innerHTML = `<p class="log-error">Error loading page: ${error.message}</p>`;
+                  UI.updateAll(page);
+                  UI.markTasksAsCompleted();
+              } else {
+                  contentArea.innerHTML = `<p class="log-error">Error: Template ${route.templateId} not found.</p>`;
+                  console.error(`Template ID '${route.templateId}' not found in DOM.`);
+              }
+          } else {
+              contentArea.innerHTML = `<p class="log-error">Error: No route defined for ${page}</p>`;
           }
       }
 
@@ -350,31 +356,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   dataRetrievalButton.addEventListener('click', () => {
                       // ... logic
                   });
-              } else if (pageName === 'it_support') {
-                  const guideLink = document.getElementById('mindlink-guide-link');
-                  const guideModal = document.getElementById('mindlink-guide-modal');
-                  const guideClose = document.getElementById('mindlink-guide-close');
+              }
 
-                  if (guideLink && guideModal) {
-                      guideLink.addEventListener('click', () => {
-                          guideModal.classList.remove('hidden');
-                      });
-                  }
-
-                  if (guideClose && guideModal) {
-                      guideClose.addEventListener('click', () => {
-                          guideModal.classList.add('hidden');
-                      });
-                  }
-                  
-                  if (guideModal) {
-                       guideModal.addEventListener('click', (e) => {
-                          if (e.target === guideModal) {
-                              guideModal.classList.add('hidden');
-                          }
-                       });
-                  }
-              } else if (pageName === 'profile_settings') {
+              if (pageName === 'profile_settings') {
                   const debugCheckbox = document.getElementById('debug-mode');
                   const adminOverrideCheckbox = document.getElementById('admin-override');
 
@@ -399,6 +383,30 @@ document.addEventListener('DOMContentLoaded', () => {
                           localStorage.setItem('adminOverrideEnabled', this.checked);
                           UI.showToast(this.checked ? '设置已保存：系统覆盖模式已启用' : '设置已保存：系统覆盖模式已禁用', this.checked ? 'red' : 'gray');
                       });
+                  }
+              } else if (pageName === 'it_support') {
+                  const guideLink = document.getElementById('mindlink-guide-link');
+                  const guideModal = document.getElementById('mindlink-guide-modal');
+                  const guideClose = document.getElementById('mindlink-guide-close');
+
+                  if (guideLink && guideModal) {
+                      guideLink.addEventListener('click', () => {
+                          guideModal.classList.remove('hidden');
+                      });
+                  }
+
+                  if (guideClose && guideModal) {
+                      guideClose.addEventListener('click', () => {
+                          guideModal.classList.add('hidden');
+                      });
+                  }
+                  
+                  if (guideModal) {
+                       guideModal.addEventListener('click', (e) => {
+                          if (e.target === guideModal) {
+                              guideModal.classList.add('hidden');
+                          }
+                       });
                   }
               } else if (pageName === 'encrypted_communication') {
                   const keyForm = document.getElementById('key-form');
@@ -606,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           init: () => {
               const page = window.location.pathname.split('/').pop().replace('.html', '');
-              if (page === 'intranet') {
+              if (page === 'intranet' || page === 'intranet_v2') {
                   toast = document.getElementById('toast');
                   if (!state.currentUser) {
                       window.location.replace('login.html');
@@ -688,28 +696,28 @@ document.addEventListener('DOMContentLoaded', () => {
                                             window.history.back();
                                         }
                                     });
-                                            }
-                                            else if (page === 'login') {                                    // Standalone login page logic
-                                    localStorage.clear();
-                                    // Explicitly clear task flags just in case clear() missed something specific or for clarity
-                                    localStorage.removeItem('visited_corp_homepage');
-                                    localStorage.removeItem('visited_forum');
+			                                } 
+			                                else if (page === 'login') {                                    // Standalone login page logic
+			                                    localStorage.clear();
+			                                    // Explicitly clear task flags just in case clear() missed something specific or for clarity
+			                                    localStorage.removeItem('visited_corp_homepage');
+			                                    localStorage.removeItem('visited_forum');
                   
-                                    document.getElementById('login-form').addEventListener('submit', (e) => {                      e.preventDefault();
-                      const user = document.getElementById('username').value;
-                      const pass = document.getElementById('password').value;
-                      if (user === 'initiate' && pass === 'harmony123') {
-                          localStorage.setItem('currentUser', 'initiate');
-                          window.location.replace('intranet.html');
-                      } else if (user === 'admin_7456' && pass === 'integration') {
-                          localStorage.setItem('currentUser', 'admin_7456');
-                          localStorage.setItem('debugModeEnabled', 'true');
-                          window.location.replace('intranet.html');
-                      } else {
-                          document.getElementById('error-message').classList.remove('hidden');
-                      }
-                  });
-              }
+			                                    document.getElementById('login-form').addEventListener('submit', (e) => {
+			                      e.preventDefault();
+			                      const user = document.getElementById('username').value;
+			                      const pass = document.getElementById('password').value;
+			                                            if (user === 'initiate' && pass === 'harmony123') {
+			                                                localStorage.setItem('currentUser', 'initiate');
+			                                                window.location.replace('intranet_v2.html');
+			                                            } else if (user === 'admin_7456' && pass === 'integration') {
+			                                                localStorage.setItem('currentUser', 'admin_7456');
+			                                                localStorage.setItem('debugModeEnabled', 'true');
+			                                                window.location.replace('intranet_v2.html');
+			                                            } else {			                          document.getElementById('error-message').classList.remove('hidden');
+			                      }
+			                  });
+			              }
           }
       };
 

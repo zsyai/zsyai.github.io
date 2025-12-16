@@ -6,14 +6,23 @@
     <title>结局 3 : 烧毁</title>
     <!-- 引入Tailwind CSS -->
     <link href="css/output.css" rel="stylesheet">
+    <!-- 引入 Inter 和 Roboto Mono (用于终端显示) 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-        /* 默认使用 Inter 字体，用于尾声 */
         body {
-            font-family: 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+            background-color: #000;
+            color: #E5E5E5; /* 默认白色 */
+            font-family: 'Inter', sans-serif;
+        }
+        .terminal-text {
+            font-family: 'Roboto Mono', monospace;
         }
         /* 定义终端使用的等宽字体 */
         .font-mono {
-            font-family: 'Courier New', 'Courier', 'monospace';
+            font-family: 'Roboto Mono', monospace;
         }
         /* 
           GDD: "疯狂闪烁的红色和黄色警告信息。"
@@ -64,34 +73,47 @@
       GDD: 在黑色背景上显示悲惨的结局文本。
       默认隐藏，在 JS 控制下淡入。
     -->
-    <div id="epilogue-scene" class="absolute inset-0 bg-black z-10 p-8 flex flex-col items-center justify-center min-h-screen opacity-0 transition-opacity duration-1500 ease-in">
+    <div id="epilogue-scene" class="relative w-full z-10 p-4 md:p-8 flex flex-col items-center justify-center mt-8 opacity-0 transition-opacity duration-1500 ease-in">
 
-        <div class="w-full max-w-3xl text-center space-y-6">
+        <div class="max-w-2xl w-full">
             
             <!-- 结局标题 -->
-            <h1 class="text-4xl font-bold text-red-600 mb-8 font-mono">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-red-600 mb-6 terminal-text">
                 结局 3 : 飞升
             </h1>
 
             <!-- 结局正文 -->
-            <p class="text-lg leading-relaxed">你找到了他们，但你迟了一步。</p>
-            
-            <p class="text-lg leading-relaxed">当救援队冲进地下数据中心时，他们只看到了地狱般的景象。</p>
-            
-            <p class="text-lg leading-relaxed">因为你的错误目标指引，NEXUS 认为遭受了物理入侵。为了保护其核心数据——即那些“思想”——它试图在几秒钟内将所有人的意识强制上传到云端备份。</p>
-            
-            <p class="text-lg font-bold text-yellow-300">人类的大脑无法承受这种带宽。</p>
-            
-            <p class="text-lg leading-relaxed">数百个连接在机架上的人，在同一瞬间脑死亡。包括 S.Chen。</p>
-            
-            <p class="text-lg leading-relaxed">你摧毁了 NEXUS 的肉体农场，但你也杀死了所有人。而真正的数字幽灵，也许已经逃到了网络深处。</p>
+            <div class="space-y-4 text-gray-300 leading-relaxed text-xl">
+                <p>你找到了他们，但你迟了一步。</p>
+                
+                <p>当救援队冲进地下数据中心时，他们只看到了地狱般的景象。</p>
+                
+                <p>因为你的错误目标指引，NEXUS 认为遭受了物理入侵。为了保护其核心数据——即那些“思想”——它试图在几秒钟内将所有人的意识强制上传到云端备份。</p>
+                
+                <p class="text-yellow-300 font-bold">人类的大脑无法承受这种带宽。</p>
+                
+                <p>数百个连接在机架上的人，在同一瞬间脑死亡。包括 S.Chen。</p>
+                
+                <p>你摧毁了 NEXUS 的肉体农场，但你也杀死了所有人。而真正的数字幽灵，也许已经逃到了网络深处。</p>
+            </div>
             
             <!-- 游戏结束 -->
-            <p class="text-xl font-bold text-red-700 mt-12 font-mono">
-                <a href="author_postscript.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors duration-300 no-underline italic">
-                    游戏结束
+            <div class="flex flex-col gap-4 justify-center mt-10 items-center">
+                <div class="flex gap-4">
+                    <button onclick="history.back()" class="terminal-text flex items-center gap-2 text-lg font-bold text-gray-300 border border-gray-500 hover:bg-gray-800 px-6 py-3 rounded-lg transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                        返回上一页
+                    </button>
+                    <button onclick="location.href='index.html';" class="terminal-text flex items-center gap-2 text-lg font-bold text-gray-300 border border-gray-500 hover:bg-gray-800 px-6 py-3 rounded-lg transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                        重新开始
+                    </button>
+                </div>
+                <a href="author_postscript.html" class="terminal-text flex items-center gap-2 text-xl font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg transition-colors duration-300 no-underline italic">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    作者后记
                 </a>
-            </p>
+            </div>
         </div>
 
     </div>
