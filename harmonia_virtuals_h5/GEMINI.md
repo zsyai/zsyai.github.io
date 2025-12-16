@@ -100,10 +100,10 @@ The project uses a hybrid architecture:
 ### Styling (`style.css` & Tailwind CSS)
 - **Local Tailwind CSS:** The project uses a local Tailwind CSS setup.
     - **Source:** `src/input.css`
-    - **Output:** `dist/output.css`
-    - **Build Command:** `npm run build:css` (or `npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch`)
-    - **Usage:** All standalone HTML pages should link to `dist/output.css` instead of using the CDN.
-- **CSS Variables (`style.css`):** All colors and fonts are defined as CSS variables in the `:root` selector. To change the theme, modify these variables.
+    - **Output:** `css/output.css`
+    - **Build Command:** `npm run build:css` (or `npx tailwindcss -i ./src/input.css -o ./css/output.css --watch`)
+    - **Usage:** All standalone HTML pages should link to `css/output.css` instead of using the CDN.
+- **CSS Variables (`css/style.css`):** All colors and fonts are defined as CSS variables in the `:root` selector. To change the theme, modify these variables.
 - **Day/Night Mode:** The entire theme is controlled by adding or removing the `.night-mode` class to the `<body>` tag. All night-mode-specific styles are defined under a `.night-mode` selector.
 
 ### Dynamic Components (`js/mobile_adapter.js`)

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Harmonia Virtuals Intranet - 我的工作台</title>
     <!-- 引入 Tailwind CSS -->
-    <link href="dist/output.css" rel="stylesheet">
+    <link href="css/output.css" rel="stylesheet">
     <!-- 引入 Inter 字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Courier+New&display=swap" rel="stylesheet">
 </head>
 <body class="text-gray-900">
@@ -101,7 +101,9 @@
 
                     <!-- 用户信息 -->
                     <div class="flex items-center gap-3">
-                        <img id="user-avatar" src="images/avatar_user_default.svg" alt="用户头像" class="w-10 h-10 rounded-full border-2 border-blue-100">
+                        <div id="user-avatar" class="w-10 h-10 rounded-full border-2 border-blue-100 flex items-center justify-center overflow-hidden">
+                             <!-- SVG will be injected here -->
+                        </div>
                         <div>
                             <div id="username-display" class="font-medium text-sm">Harmonia Virtuals 员工</div>
                             <div id="user-level-display" class="text-xs text-gray-500">Lv.1 (initiate)</div>

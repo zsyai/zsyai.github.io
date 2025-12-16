@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
                       day: { url: 'content_post_dark_mode_joke.html', title: '帖子详情' },
                       night: { url: 'content_post_dark_mode_joke_night.html', title: '[LOG] Dark Mode Joke' }
                   },
+                  'post_canteen': {
+                      day: { url: 'content_post_canteen.html', title: '帖子详情' },
+                      night: { url: 'content_post_canteen_night.html', title: '[LOG] Nutrient_Intake_Analysis' },
+                      admin_night: { url: 'content_post_canteen_admin_night.html', title: '[LOG] Nutrient_Intake_Analysis_FULL' }
+                  },
                           'post_bug_report': {
                               day: { url: 'content_post_bug_report_day.html', title: '帖子详情' },
                               night: { url: 'content_post_bug_report_night.html', title: '帖子详情' }
@@ -118,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const isNight = state.debugModeEnabled && state.isNight;
           let route;
 
-          if ((page === 'forum' || page === 'it_support' || page === 'post_art_contest' || page === 'devblog' || page === 'post_award') && state.currentUser === 'admin_7456' && isNight) {
+          if ((page === 'forum' || page === 'it_support' || page === 'post_art_contest' || page === 'devblog' || page === 'post_award' || page === 'post_canteen') && state.currentUser === 'admin_7456' && isNight) {
               route = routeDef.admin_night;
           } else if ((page === 'home' || page === 'profile_settings') && state.currentUser === 'admin_7456') {
               route = isNight ? (routeDef.admin_night || routeDef.night) : (routeDef.admin_day || routeDef.day);
@@ -160,12 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
               
               if (userAvatarEl) {
                   if (state.currentUser === 'admin_7456') {
-                      userAvatarEl.src = "images/avatar_user_admin.svg";
+                      userAvatarEl.src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZlZmRiIi8+PHBhdGggZmlsbD0iI2I0NTMwOSIgZD0iTTE3LjcxNSAyMS43N2g0LjU5bC0xLjc2LTQuODFxLS4xMi0uMzItLjI3LS43Ni0uMTQtLjQ0LS4yNy0uOTUtLjEzLjUxLS4yOC45NS0uMTQuNDUtLjI2Ljc4em0zLjY3LTkgNS42NyAxNC40NmgtMi4wOHEtLjM0IDAtLjU3LS4xOC0uMjEtLjE3LS4zMy0uNDNsLTEuMDgtMi45NWgtNS45OWwtMS4wOCAyLjk1cS0uMDguMjMtLjMuNDItLjI0LjE5LS41OC4xOWgtMi4xbDUuNjktMTQuNDZ6Ii8+PC9zdmc+";
                       userAvatarEl.alt = "Admin 头像";
                       userAvatarEl.classList.remove('border-blue-100');
                       userAvatarEl.classList.add('border-orange-200');
                   } else {
-                      userAvatarEl.src = "images/avatar_user_default.svg";
+                      userAvatarEl.src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBlN2ZmIi8+PHBhdGggZmlsbD0iIzRmNDZlNSIgZD0iTTIzLjM4NSAxMi43N2gyLjcxdjE0LjQ2aC0yLjcxdi02LjMyaC02Ljc4djYuMzJoLTIuN1YxMi43N2gyLjd2Ni4yMmg2Ljc4eiIvPjwvc3ZnPg==";
                       userAvatarEl.alt = "用户头像";
                       userAvatarEl.classList.remove('border-orange-200');
                       userAvatarEl.classList.add('border-blue-100');

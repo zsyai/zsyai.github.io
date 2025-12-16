@@ -94,7 +94,12 @@ The project uses a hybrid architecture:
 2.  **Intranet Hub (`intranet.html`):** This is the core of the game. It acts as a Single-Page Application (SPA) shell. It contains the header, navigation, and an empty content area.
 3.  **Content Fragments:** All other pages (e.g., `content_home.html`, `content_forum_day.html`) are simple HTML snippets that are dynamically loaded into the `content-area` of the `intranet.html` hub.
 
-### Styling (`style.css`)
+### Styling (`css/style.css` & `css/output.css`)
+- **Tailwind CSS v4:** The project uses Tailwind CSS v4.
+    - **Source:** `src/input.css` (Contains `@import "tailwindcss";` and custom layer overrides like `.night-mode` shell styles).
+    - **Output:** `css/output.css` (Compiled file).
+    - **Build Command:** `npx tailwindcss -i src/input.css -o css/output.css`.
+- **Legacy Styles:** `css/style.css` contains custom legacy styles and is loaded alongside Tailwind.
 - **CSS Variables:** All colors and fonts are defined as CSS variables in the `:root` selector. To change the theme, modify these variables.
 - **Day/Night Mode:** The entire theme is controlled by adding or removing the `.night-mode` class to the `<body>` tag. All night-mode-specific styles are defined under a `.night-mode` selector.
 - **Templates:** The CSS is organized into sections corresponding to the 10 design templates. When creating or modifying a page, refer to the appropriate template section for class names and structure.

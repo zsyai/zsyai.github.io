@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+@layer components {
+    /* Global Night Mode overrides */
+    body.night-mode {
+        @apply bg-gray-950 text-gray-100;
+    }
+
+    /* Sidebar in Night Mode */
+    .night-mode #sidebar {
+        @apply bg-gray-900 border-gray-800;
+    }
+    
+    .night-mode #sidebar .text-blue-600 { /* Logo text */
+        @apply text-blue-400;
+    }
+    
+    .night-mode #sidebar .bg-blue-600 { /* Logo bg */
+        @apply bg-blue-800;
+    }
+
+    .night-mode #sidebar a {
+        @apply text-gray-400 hover:bg-gray-800 hover:text-gray-100;
+    }
+    
+    .night-mode #sidebar a.text-blue-700 { /* Active link */
+        @apply text-blue-400 bg-gray-800;
+    }
+    .night-mode #sidebar a.bg-blue-50 {
+         @apply bg-gray-800;
+    }
+
+    /* Header in Night Mode */
+    .night-mode header {
+        @apply bg-gray-900/90 border-gray-800 text-gray-200;
+    }
+    
+    .night-mode #username-display {
+        @apply text-gray-200;
+    }
+    
+    .night-mode #user-level-display {
+        @apply text-gray-500;
+    }
+    
+    /* Toggle Button */
+    .night-mode #mode-toggle-button {
+        @apply text-gray-300 hover:bg-gray-800;
+    }
+    
+    /* Toast */
+    .night-mode #toast {
+        @apply bg-green-900 text-green-100 border border-green-700;
+    }
+    
+    /* Access Denied Modal */
+    .night-mode #access-denied-modal > div {
+        @apply bg-gray-800 border border-red-700;
+    }
+    .night-mode #access-denied-modal h2 {
+        @apply text-red-500;
+    }
+    .night-mode #access-denied-modal p {
+        @apply text-gray-300;
+    }
+}

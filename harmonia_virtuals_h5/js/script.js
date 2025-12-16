@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
           isNight: localStorage.getItem('nightModeActive') === 'true',
       };
       let toast;
+      
+      const AvatarSVGs = {
+          'avatar_user_admin': `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="100%" height="100%" fill="#ffefdb"/><path fill="#b45309" d="M17.715 21.77h4.59l-1.76-4.81q-.12-.32-.27-.76-.14-.44-.27-.95-.13.51-.28.95-.14.45-.26.78zm3.67-9 5.67 14.46h-2.08q-.34 0-.57-.18-.21-.17-.33-.43l-1.08-2.95h-5.99l-1.08 2.95q-.08.23-.3.42-.24.19-.58.19h-2.1l5.69-14.46z"/></svg>`,
+          'avatar_user_default': `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="100%" height="100%" fill="#e0e7ff"/><path fill="#4f46e5" d="M23.385 12.77h2.71v14.46h-2.71v-6.32h-6.78v6.32h-2.7V12.77h2.7v6.22h6.78z"/></svg>`
+      };
 
       // --- 2. ROUTER & CONTENT LOADER ---
       const contentRoutes = {
@@ -64,6 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
                               day: { url: 'content_post_bug_report_day.html', title: '帖子详情' },
                               night: { url: 'content_post_bug_report_night.html', title: '帖子详情' }
                           },
+                  'post_canteen': {
+                      day: { url: 'content_post_canteen.html', title: '帖子详情' },
+                      night: { url: 'content_post_canteen_night.html', title: '[LOG] Canteen_Chemical_Analysis' },
+                      admin_night: { url: 'content_post_canteen_admin_night.html', title: '[LOG] Canteen_Chemical_Analysis' }
+                  },
                                   'admin_tools': {
           day: { url: 'content_admin_tools_day.html', title: '管理员工具' },
           night: { url: 'content_admin_tools_night.html', title: '[LOG] 管理员工具' }
@@ -118,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const isNight = state.debugModeEnabled && state.isNight;
           let route;
 
-          if ((page === 'forum' || page === 'it_support' || page === 'post_art_contest' || page === 'devblog' || page === 'post_award') && state.currentUser === 'admin_7456' && isNight) {
+          if ((page === 'forum' || page === 'it_support' || page === 'post_art_contest' || page === 'devblog' || page === 'post_award' || page === 'post_canteen') && state.currentUser === 'admin_7456' && isNight) {
               route = routeDef.admin_night;
           } else if ((page === 'home' || page === 'profile_settings') && state.currentUser === 'admin_7456') {
               route = isNight ? (routeDef.admin_night || routeDef.night) : (routeDef.admin_day || routeDef.day);
@@ -201,13 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
               
               if (userAvatarEl) {
                   if (state.currentUser === 'admin_7456') {
-                      userAvatarEl.src = "images/avatar_user_admin.svg";
-                      userAvatarEl.alt = "Admin 头像";
+                      userAvatarEl.innerHTML = AvatarSVGs['avatar_user_admin'];
                       userAvatarEl.classList.remove('border-blue-100');
                       userAvatarEl.classList.add('border-orange-200');
                   } else {
-                      userAvatarEl.src = "images/avatar_user_default.svg";
-                      userAvatarEl.alt = "用户头像";
+                      userAvatarEl.innerHTML = AvatarSVGs['avatar_user_default'];
                       userAvatarEl.classList.remove('border-orange-200');
                       userAvatarEl.classList.add('border-blue-100');
                   }
