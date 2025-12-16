@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('failedSearchCount', failedCount);
                 let html = '<p class="text-gray-500">未找到相关结果或无权限查看。</p>';
                 if (failedCount >= 5) {
-                    html += '<p class="text-sm text-gray-400 mt-4 italic">匿名备注:“别在搜索框里浪费时间了。最刺眼的白色不仅能致盲，也能藏匿墨水。回到那些歌功颂德的帖子去，只有当你关掉头顶那轮人造太阳，原本‘空白’的地方才会显形。”</p>';
+                    html += '<p class="text-sm text-blue-700 mt-4 italic">匿名备注:“别在搜索框里浪费时间了。回到那些歌功颂德的帖子去……阳光指引路口，黑暗显露真相。”</p>';
                 }
                 resultsContainer.innerHTML = html;
             }
