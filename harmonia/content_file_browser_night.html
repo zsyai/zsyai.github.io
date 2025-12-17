@@ -10,27 +10,26 @@
                 <div class="terminal-bg p-6 md:p-10 rounded-lg border border-gray-700 font-mono shadow-inner max-w-4xl mx-auto">
                     
                     <!-- Retro ASCII Header -->
-                    <pre class="terminal-header text-xs md:text-sm whitespace-pre-wrap word-break-all">
-+---------------------------------------------------+
-| [H] HARMONIA VIRTUALS - SYSTEM FILE BROWSER       |
-|                     SYS.V.2.8                     |
-|             -- ADMIN ACCESS LEVEL --              |
-+---------------------------------------------------+
+                    <pre class="terminal-header text-xs md:text-sm whitespace-pre-wrap word-break-all leading-none">
++------------------------------------+
+|  HARMONIA VIRTUALS - FILE BROWSER  |
+|              SYS.V.2.8             |
+|      -- ADMIN ACCESS LEVEL --      |
++------------------------------------+
                     </pre>
             
                     <!-- Log Area -->
-                    <div id="log-output" class="mt-4 text-sm text-gray-400 space-y-1 whitespace-pre-wrap word-break-all">
+                    <div id="log-output" class="mt-2 text-sm text-gray-400 space-y-0 leading-tight whitespace-pre-wrap word-break-all">
                         <p>[<span class="terminal-log-ok">OK</span>] INITIALIZING FILE SYSTEM INTERFACE...</p>
                         <p>[<span class="terminal-log-ok">OK</span>] ESTABLISHING SECURE CONNECTION...</p>
                         <p>[<span class="terminal-log-wait">WAIT</span>] AWAITING PATH INPUT.</p>
-                        <p class="mt-4 text-gray-200" id="separator-1">====================================================</p>
-                        <p class="text-lg text-white">FILE_BROWSER: 请输入文件路径</p>
+                        <p class="mt-2 text-gray-200" id="separator-1">====================================================</p>
+                        <p class="text-lg text-white">请输入文件路径:</p>
                         <p class="text-gray-200" id="separator-2">====================================================</p>
                     </div>
             
                     <!-- Input Form -->
-                    <form id="file-browser-form" class="mt-6 flex flex-col md:flex-row gap-3 items-center">
-                        <label for="file-path" class="terminal-prompt text-lg font-bold shrink-0">>></label>
+                    <form id="file-browser-form" class="mt-4 flex flex-col md:flex-row gap-3 items-center">
                         <input type="text" id="file-path" name="file-path" 
                                class="flex-grow terminal-input text-lg p-2 font-mono w-full"
                                placeholder="//SYSTEM/..."

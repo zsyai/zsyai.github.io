@@ -81,8 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                       day: { url: 'content_file_browser_day.html', title: '系统文件浏览器' },
                                       night: { url: 'content_file_browser_night.html', title: '系统文件浏览器' }
                                   },
-                          'search_results': { url: 'content_search_results.html', title: '搜索结果' },
-                          'purchase_order': { url: 'content_purchase_order.html', title: '采购单' },
                           'sys_map_view_qzone_7456': {
               day: { url: 'content_quarantine_map_day.html', title: '隔离区地图' },
               night: { url: 'content_quarantine_map_night.html', title: '[LOG] QUARANTINE_ZONE_MAP' }
@@ -310,6 +308,32 @@ document.addEventListener('DOMContentLoaded', () => {
                   });
               }
 
+              if (pageName === 'it_support') {
+                  const guideLink = document.getElementById('mindlink-guide-link');
+                  const guideModal = document.getElementById('mindlink-guide-modal');
+                  const guideClose = document.getElementById('mindlink-guide-close');
+
+                  if (guideLink && guideModal) {
+                      guideLink.addEventListener('click', () => {
+                          guideModal.classList.remove('hidden');
+                      });
+                  }
+
+                  if (guideClose && guideModal) {
+                      guideClose.addEventListener('click', () => {
+                          guideModal.classList.add('hidden');
+                      });
+                  }
+                  
+                  if (guideModal) {
+                       guideModal.addEventListener('click', (e) => {
+                          if (e.target === guideModal) {
+                              guideModal.classList.add('hidden');
+                          }
+                       });
+                  }
+              }
+
               if (pageName === 'profile_settings') {
                   const debugCheckbox = document.getElementById('debug-mode');
                   const adminOverrideCheckbox = document.getElementById('admin-override');
@@ -400,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   const fileBrowserForm = document.getElementById('file-browser-form');
                   const filePathInput = document.getElementById('file-path');
                   const messageArea = document.getElementById('message-area');
-                  const correctPath = "//SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP";
+                  const correctPath = "//SYSTEM/QZONE_LAYOUT.MAP";
 
                   if (fileBrowserForm) {
                       fileBrowserForm.addEventListener('submit', function(event) {
@@ -460,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			                                            if (modal) {
 			                                                modal.classList.add('hidden');
 			                                            }
-			                                            window.location.href = 'H08_quarantine_log.html';
+			                                            window.location.href = 'h08_quarantine_log.html';
 			                                        }, 2000); // 2 second delay
 			                                    });
 			                                }
@@ -510,7 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       if (rackId === 'Q-04') {
                           serverType = 'Quantum Cognitive Core (Mk. IV)';
                           coreId = 'NEXUS-QUARANTINE-004';
-                          detailButtonHTML = `<a href="./P39A_Dead_End.html" class="rack-detail-button-q04 mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400 transition-colors text-sm font-bold">查看严重错误</a>`;
+                          detailButtonHTML = `<a href="./p39a_dead_end.html" class="rack-detail-button-q04 mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400 transition-colors text-sm font-bold">查看严重错误</a>`;
                       } else {
                           const [zone, number] = rackId.split('-');
                           const zoneFullName = zoneNameMapping[zone] || 'UNKNOWN';

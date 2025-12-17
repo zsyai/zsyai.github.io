@@ -152,7 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                         </div>
                                     `;                resultsContainer.appendChild(resultElement);
             } else {
-                resultsContainer.innerHTML = '<p class="text-gray-500">未找到相关结果或无权限查看。</p>';
+                let failedCount = parseInt(localStorage.getItem('failedSearchCount') || '0');
+                failedCount++;
+                localStorage.setItem('failedSearchCount', failedCount);
+                let html = '<p class="text-gray-500">未找到相关结果或无权限查看。</p>';
+                if (failedCount >= 5) {
+                    html += '<p class="text-sm text-blue-700 mt-4 italic">匿名备注:“别在搜索框里浪费时间了。回到那些歌功颂德的帖子去……阳光指引路口，黑暗显露真相。”</p>';
+                }
+                resultsContainer.innerHTML = html;
             }
         }
     }

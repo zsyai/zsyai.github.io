@@ -7,7 +7,7 @@ const submitButton = document.getElementById('submit-button');
 
 // GDD P35 & P38: 正确答案
 // (为便于测试，简化地址输入)
-const correctAddress = "XX市远郊XX工业园B4栋地下三层";
+const correctAddress = "F市远郊XX工业园B4栋地下三层";
 const correctCoreId = "NEXUS-CORE-001";
 
 // GDD P8: 错误答案
@@ -36,13 +36,13 @@ sosForm.addEventListener('submit', function(event) {
         let endingUrl = null;
         
         // GDD P41: 完美结局
-        if (address.includes("XX市远郊XX工业园B4栋") && coreId === correctCoreId) {
+        if (address.includes("F市远郊XX工业园B4栋") && coreId === correctCoreId) {
             setTimeout(() => {
                 window.location.href = './ending_awakening_protocol.html';
             }, 2000);
         
         // GDD P43: ID 错误
-        } else if (address.includes("XX市远郊XX工业园B4栋") && coreId !== correctCoreId) {
+        } else if (address.includes("F市远郊XX工业园B4栋") && coreId !== correctCoreId) {
             setTimeout(() => {
                 window.location.href = './ending_bad_id.html';
             }, 2000);

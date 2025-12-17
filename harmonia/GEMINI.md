@@ -70,11 +70,11 @@ The game is structured as a non-linear progression through a series of interconn
     1.  `intranet.html#forum` (Night Mode) -> Click `[WARNING] DATA_FRAGMENT_STORED` -> `fragment_chat.html`.
     2.  In the chat, use the password **`孤独`** (from the philosophy post).
     3.  Receive the clue **"冷却系统"**.
-    4.  Navigate to `intranet.html#search_results` (via search).
-    5.  Click the link to `intranet.html#purchase_order` to find the **physical address**.
+    4.  Navigate to `intranet.html#search_results` (via search). *Hint: After 5 failed searches, a clue will appear suggesting you search for what "they don't want you to see".*
+    5.  Click the link to `intranet.html#purchase_order` to find the **physical address** (Note: The shipping address is **F市...**).
 *   **Evidence B (Digital Core):**
     1.  `intranet.html#post_award` (Night Mode).
-    2.  Find the hidden file path clue: `//SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP`.
+    2.  Find the hidden file path clue: `//SYSTEM/QZONE_LAYOUT.MAP`.
     3.  Navigate to `intranet.html#file_browser`.
     4.  Enter the path to access `intranet.html#sys_map_view_qzone_7456`.
     5.  Click the red `Q-04` rack to navigate to `intranet.html#quarantine_log` and find the **server ID**.

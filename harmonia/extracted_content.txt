@@ -1,5 +1,5 @@
 页面编号：1
-页面名称：H08_quarantine_log.html (隔离区地图/日志)
+页面名称：h08_quarantine_log.html (隔离区地图/日志)
 页面文字内容：
 节点 H-08 原始数据流
 [ < 连接已建立: 节点 H-08 ]
@@ -30,7 +30,7 @@ NEXUS-CORE-001
 ==================================================
 
 页面编号：2
-页面名称：P39A_Dead_End.html (访问拒绝/死胡同页面)
+页面名称：p39a_dead_end.html (访问拒绝/死胡同页面)
 页面文字内容：
 访问被拒绝
 [ 警告 ]
@@ -888,7 +888,7 @@ Purge Date (Scheduled): [T-Minus 48:00:00]
 [ASSET]: ... [DATA_FRAGMENT_RESIDUE_DETECTED] ... Request Action. Ticket Filed.
 [LOG]: ... 正在加载 Nexus 物理分配 ...
 [LOG]: S.Chen 认知数据 已归档至 隔离区。
-[LOG]: 参考地图路径: //SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP
+[LOG]: 参考地图路径: //SYSTEM/QZONE_LAYOUT.MAP
 [LOG]: ... Log End.
 
 ==================================================
@@ -1299,7 +1299,7 @@ XX市 远郊XX工业园 B4栋 地下三层 数据中心
 运行中
 //:SYS/TOOL/FILE_BROWSER ]
 系统文件浏览器
-[LOG]: 正在加载文件: //SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP
+[LOG]: 正在加载文件: //SYSTEM/QZONE_LAYOUT.MAP
 [LOG]: 路径验证...
 成功
 。
@@ -1391,7 +1391,7 @@ Q区 (Quarantine)
 运行中
 //:SYS/TOOL/FILE_BROWSER ]
 系统文件浏览器
-> [LOG]: 正在加载文件: //SYSTEM/ADMIN/MAPS/QZONE_LAYOUT.MAP
+> [LOG]: 正在加载文件: //SYSTEM/QZONE_LAYOUT.MAP
 > [LOG]: 路径验证...
 成功
 。
