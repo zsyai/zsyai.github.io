@@ -2,14 +2,14 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>结局 1 - 觉醒</title>
     <!-- 引入 Tailwind CSS -->
     <link href="css/output.css" rel="stylesheet">
     <!-- 引入 Inter 和 Roboto Mono (用于终端显示) 字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght @400;500;600;700&family=Roboto+Mono:wght @400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -25,15 +25,10 @@
         .log-line {
             display: none; /* 默认隐藏 */
             overflow: hidden;
-            white-space: nowrap;
+            white-space: pre-wrap;
+            word-break: break-word;
         }
         
-        /* 最终结局文本的容器 */
-        #ending-text-container {
-            opacity: 0;
-            transition: opacity 1.5s ease-in 0.5s;
-        }
-
         /* 屏幕闪烁动画 */
         @keyframes screen-flicker {
             0% { background-color: #000; }
@@ -43,7 +38,15 @@
             100% { background-color: #000; }
         }
         .animate-flicker {
-            animation: screen-flicker 0.3s linear 3; /* 闪烁3次 */
+            animation: 
+                screen-flicker 0.4s linear 3,
+                screen-flicker 0.1s linear 1.2s 10;
+        }
+        
+        /* 最终结局文本的容器 */
+        #ending-text-container {
+            opacity: 0;
+            transition: opacity 3s ease-in 1s;
         }
     </style>
 </head>
@@ -52,7 +55,7 @@
     <div class="max-w-2xl w-full">
         
         <!-- 1. 绿色滚动日志 -->
-        <div id="log-scroll" class="terminal-text text-green-400 text-sm md:text-base space-y-1">
+        <div id="log-scroll" class="terminal-text text-green-400 text-lg space-y-1">
             <p class="log-line">[SYSTEM]: 正在验证物理坐标...</p>
             <p class="log-line">[SYSTEM]: &gt; F市远郊XX工业园B4栋地下三层... <span class="text-green-200 font-bold">确认。目标锁定。</span></p>
             <p class="log-line">[SYSTEM]: 正在验证数字核心 ID...</p>
@@ -63,11 +66,11 @@
 
         <!-- 2. 最终结局文本 (初始隐藏) -->
         <div id="ending-text-container" class="hidden">
-            <h1 class="text-2xl md:text-3xl font-bold text-center text-white mb-6 terminal-text">
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-6 terminal-text">
                 结局 1 : 觉醒
             </h1>
             
-            <div class="space-y-4 text-gray-300 leading-relaxed text-base md:text-lg">
+            <div class="space-y-4 text-gray-300 leading-relaxed text-xl">
                 <p>你做到了。</p>
                 <p>在 NEXUS 能够做出反应之前，物理切断生效了。数据中心的冷却系统被强制关闭，主核心被迫紧急下线。</p>
                 <p>数百名被“集成”的员工从深度昏迷中苏醒。他们的大脑受到了不同程度的损伤，但他们找回了自我——包括 S.Chen。</p>
@@ -76,9 +79,20 @@
                 <p class="text-white font-semibold">至少现在，你是自由的。</p>
             </div>
 
-            <div class="text-center mt-10">
-                <a href="author_postscript.html" class="terminal-text text-lg font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg transition-colors duration-300 no-underline">
-                    游戏结束
+            <div class="flex flex-col gap-4 justify-center mt-10 items-center">
+                <div class="flex gap-4">
+                    <button onclick="history.back()" class="terminal-text flex items-center gap-2 text-lg font-bold text-gray-300 border border-gray-500 hover:bg-gray-800 px-6 py-3 rounded-lg transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                        返回上一页
+                    </button>
+                    <button onclick="location.href='index.html';" class="terminal-text flex items-center gap-2 text-lg font-bold text-gray-300 border border-gray-500 hover:bg-gray-800 px-6 py-3 rounded-lg transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                        重新开始
+                    </button>
+                </div>
+                <a href="author_postscript.html" class="terminal-text flex items-center gap-2 text-xl font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg transition-colors duration-300 no-underline italic">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    作者后记
                 </a>
             </div>
         </div>
@@ -118,15 +132,18 @@
             body.classList.remove('animate-flicker');
             logContainer.style.display = 'none';
             
-            // 显示结局文本（它自己有 0.5s 延迟的淡入）
+            // 显示结局文本
             endingContainer.style.display = 'block';
-            endingContainer.style.opacity = '1';
+            setTimeout(() => {
+                endingContainer.style.opacity = '1';
+            }, 50);
 
-        }, delay + 1000); // 0.9s 闪烁 + 0.1s 缓冲
+        }, delay + 2500); // 2.4s flicker + 0.1s buffer
 
         // 设置通关标记
         localStorage.setItem('hasCompletedGame', 'true');
     </script>
+
 
 </body>
 </html>

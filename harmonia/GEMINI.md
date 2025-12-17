@@ -9,6 +9,13 @@ This document provides a comprehensive overview of the Harmonia Virtuals game, i
     *   Removed the old JavaScript `Renderers` functions for pages that are now loaded from static HTML files.
     *   Improved the CSS for night mode to provide a more immersive and consistent experience, particularly for the main intranet hub.
     *   Cleaned up various night mode pages for style, consistency, and correctness.
+*   **December 9, 2025:** Updated technical stack details.
+    *   Documented dynamic header bar injection via `js/mobile_adapter.js`.
+    *   Documented local Tailwind CSS setup and build process.
+*   **December 17, 2025:** Refactored Intranet to Bundle Templates.
+    *   Created `intranet_v2.html` which bundles all external `content_*.html` fragments as `<template>` elements.
+    *   Created `js/script_v2.js` which updates `contentRoutes` to use `templateId`s and `loadContent` to inject content from templates instead of using `fetch`.
+    *   This removes runtime HTTP dependencies for content loading, improving performance and reliability.
 
 ## 2. Game Design Summary
 
@@ -88,11 +95,12 @@ The game is structured as a non-linear progression through a series of interconn
 
 ## 4. Technical Guideline for Future Adjustments
 
-### Project Architecture: Hub and Spoke Model
-The project uses a hybrid architecture:
+### Project Architecture: Hub and Spoke Model (Bundled Templates)
+The project uses a hybrid architecture, now optimized for bundling:
 1.  **Standalone Pages:** A few pages (`hr_chat.html`, `offer_email.html`, `login.html`, `it_credentials.html`, `profile_settings.html`, and all `ending_...html` pages) are self-contained HTML files. They are styled with **Tailwind CSS** loaded from a CDN.
-2.  **Intranet Hub (`intranet.html`):** This is the core of the game. It acts as a Single-Page Application (SPA) shell. It contains the header, navigation, and an empty content area.
-3.  **Content Fragments:** All other pages (e.g., `content_home.html`, `content_forum_day.html`) are simple HTML snippets that are dynamically loaded into the `content-area` of the `intranet.html` hub.
+2.  **Intranet Hub (`intranet.html`):** This is the core of the game. It acts as a Single-Page Application (SPA) shell. It contains the header, navigation, and an empty content area. All "internal" intranet pages (formerly `content_*.html` fragments) are now bundled directly into `intranet.html` as `<template id="...">` tags.
+3.  **Backups:** The original unbundled `intranet.html` and `js/script.js` have been backed up as `*.bak` files.
+4.  **Refactor Script (`apply_h5_refactor.py`):** A Python script is available to regenerate `intranet.html` and `js/script.js` from the source `intranet.html.bak` (or similar logic) if needed, though currently it is set up to generate `v2` files. *Note: Maintenance workflow now assumes `intranet.html` is the primary bundled file.*
 
 ### Styling (`css/style.css` & `css/output.css`)
 - **Tailwind CSS v4:** The project uses Tailwind CSS v4.
@@ -104,11 +112,12 @@ The project uses a hybrid architecture:
 - **Day/Night Mode:** The entire theme is controlled by adding or removing the `.night-mode` class to the `<body>` tag. All night-mode-specific styles are defined under a `.night-mode` selector.
 - **Templates:** The CSS is organized into sections corresponding to the 10 design templates. When creating or modifying a page, refer to the appropriate template section for class names and structure.
 
-### JavaScript (`script.js`)
+### JavaScript (`js/script.js`)
 The main script is organized into several key objects:
 - **`state`:** A global object holding the current user, debug mode status, and night mode status. This is the single source of truth.
-- **`contentRoutes`:** A mapping of URL hash strings (e.g., `'forum'`) to their corresponding content. Some routes are simple, while others have distinct `day` and `night` properties for different content.
-- **`loadContent(hash)`:** The core function that fetches an HTML fragment and injects it into the `intranet.html` content area. It automatically selects the correct `day` or `night` file based on the `state`. **Crucially, it calls `UI.updateAll()` after injection.**
+- **`contentRoutes`:** A mapping of URL hash strings (e.g., `'forum'`) to their corresponding **Template IDs**.
+    - Example: `forum: { day: { templateId: 'tmpl_forum_day', ... }, ... }`
+- **`loadContent(hash)`:** The core function that looks up the correct `templateId` based on the `state` and the hash, finds the `<template>` element in the DOM, and injects its `innerHTML` into the `content-area`. **Crucially, it calls `UI.updateAll()` after injection.**
 - **`UI` Object:** Contains functions for updating the visual state of the application (e.g., `applyMode`, `updateNav`). `UI.updateAll()` is the main function to call after any content change.
 - **`Renderers` Object:** Contains functions that dynamically generate HTML for specific, complex content fragments (like the award post). These are called by `UI.updateAll()`. Most static content has been moved to HTML files.
 - **`Events` Object:**
@@ -118,34 +127,22 @@ The main script is organized into several key objects:
 ### How to Add or Modify Content
 
 #### To Add a New Intranet Page with a Single Version (e.g., "Company News"):
-1.  **Create the Content Fragment:** Create a new file named `content_company_news.html`. Add only the HTML for the central content area.
-2.  **Register the Route:** In `script.js`, add a new entry to the `contentRoutes` object:
-    ```javascript
-    'company_news': { url: 'content_company_news.html', title: '公司新闻' },
-    ```
-3.  **Add a Link:** In `intranet.html`, add a new link to the left navigation bar:
+1.  **Create the Content Fragment:** Create a new file named `content_company_news.html`.
+2.  **Update `apply_h5_refactor.py`:**
+    *   Add an entry to `templates_map`: `'tmpl_company_news': 'content_company_news.html'`.
+    *   Add an entry to `new_routes_js` string: `'company_news': { templateId: 'tmpl_company_news', title: '公司新闻' },`.
+3.  **Run Refactor Script:** Run `python3 apply_h5_refactor.py` to regenerate the bundled files. *Note: You may need to rename the output `v2` files to `intranet.html` and `js/script.js` manually or update the script.*
+4.  **Add a Link:** In `intranet.html` (and re-run script), add a new link to the left navigation bar:
     ```html
     <li><a href="#company_news">公司新闻</a></li>
     ```
-4.  **Add Dynamic Logic (If Needed):** If the new page has interactive elements, add a new `else if (pageName === 'company_news')` block to the `Events.initPageSpecificListeners` function.
+5.  **Add Dynamic Logic (If Needed):** If the new page has interactive elements, add logic to `Events.initPageSpecificListeners` in `js/script.js` (and re-run script).
 
-#### To Add a New Intranet Page with Day/Night Versions:
-1.  **Create Content Fragments:** Create two files: `content_special_page_day.html` and `content_special_page_night.html`.
-2.  **Register the Route:** In `script.js`, add a new entry to `contentRoutes` with `day` and `night` properties:
-    ```javascript
-    'special_page': {
-        day: { url: 'content_special_page_day.html', title: 'Special Page' },
-        night: { url: 'content_special_page_night.html', title: '[LOG] Special Page' }
-    },
-    ```
-3.  **Add a Link:** In `intranet.html`, add a link like `<a href="#special_page">...</a>`. The `loadContent` function will handle the rest.
-
-#### To Modify an Existing Intranet Page (e.g., the Forum):
-1.  **Identify the File(s):** Find the route in `contentRoutes`. If it has `day` and `night` versions, you may need to edit both `content_forum_day.html` and `content_forum_night.html`.
-2.  **Modify Static Content:** Edit the corresponding HTML file(s) directly.
-3.  **Modify Dynamic Content:** If a page's content is still generated by JavaScript (e.g., the Award Post), find the relevant function within the `Renderers` object in `script.js` and modify the generated HTML.
+#### To Modify an Existing Intranet Page:
+1.  **Modify Source File:** Edit the corresponding `content_*.html` file.
+2.  **Run Refactor Script:** Run `python3 apply_h5_refactor.py` to update the bundled files.
 
 ### Important Considerations
-- **Always Use Hashes for Intranet Navigation:** All links within the intranet must use the `href="#page_name"` format to work with the router.
-- **State is King:** All dynamic content should be rendered based on the `state` object (`state.currentUser`, `state.isNight`, etc.). Do not rely on checking CSS classes directly.
-- **Event Listeners for Dynamic Content:** Any event listeners for elements inside a content fragment **must** be attached in the `Events.initPageSpecificListeners` function. This is because the content is destroyed and recreated on every navigation, and listeners must be re-attached.
+- **Development Workflow:** You should continue to edit `intranet.html.bak` (source), `js/script.js.bak` (source), and `content_*.html` files as the "source of truth" if using the generator. Always run `python3 apply_h5_refactor.py` to build the deployable files.
+- **State is King:** All dynamic content should be rendered based on the `state` object.
+- **Event Listeners:** Any event listeners for elements inside a content fragment **must** be attached in the `Events.initPageSpecificListeners` function.

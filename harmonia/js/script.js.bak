@@ -13,87 +13,86 @@ document.addEventListener('DOMContentLoaded', () => {
       // --- 2. ROUTER & CONTENT LOADER ---
       const contentRoutes = {
           'home': {
-              day: { templateId: 'tmpl_home_day', title: '我的工作台' },
-              night: { templateId: 'tmpl_home_night', title: '[LOG] USER_DASHBOARD' },
-              admin_day: { templateId: 'tmpl_home_admin_day', title: '管理员工作台' },
-              admin_night: { templateId: 'tmpl_home_admin_night', title: '[LOG] ADMIN_DASHBOARD' }
+              day: { url: 'content_home_day.html', title: '我的工作台' },
+              night: { url: 'content_home_night.html', title: '[LOG] USER_DASHBOARD' },
+              admin_day: { url: 'content_home_admin_day.html', title: '管理员工作台' },
+              admin_night: { url: 'content_home_admin_night.html', title: '[LOG] ADMIN_DASHBOARD' }
           },
           'forum': {
-              day: { templateId: 'tmpl_forum_day', title: '社区中心' },
-              night: { templateId: 'tmpl_forum_night', title: '[LOG] 社区中心' },
-              admin_night: { templateId: 'tmpl_forum_admin_night', title: '[ADMIN] 社区中心' }
+              day: { url: 'content_forum_day.html', title: '社区中心' },
+              night: { url: 'content_forum_night.html', title: '[LOG] 社区中心' },
+              admin_night: { url: 'content_forum_admin_night.html', title: '[ADMIN] 社区中心' }
           },
-          'devblog': {
-              day: { templateId: 'tmpl_devblog_day', title: 'Project Atlas 博客' },
-              night: { templateId: 'tmpl_devblog_night', title: '[LOG] Project_Atlas_Blog_Decompiled' },
-              admin_night: { templateId: 'tmpl_devblog_admin_night', title: '[LOG] Project_Atlas_Blog_Decompiled' }
+                  'devblog': {
+                      day: { url: 'content_dev_blog_integration.html', title: 'Project Atlas 博客' },
+                      night: { url: 'content_dev_blog_integration_night.html', title: '[LOG] Project_Atlas_Blog_Decompiled' },
+                      admin_night: { url: 'content_dev_blog_integration_admin_night.html', title: '[LOG] Project_Atlas_Blog_Decompiled' }
+                  },
+                  'it_support': {
+                      day: { url: 'content_it_support_day.html', title: 'IT 支持' },
+                      night: { url: 'content_it_support_night.html', title: 'IT 支持' },
+                      admin_night: { url: 'content_it_support_admin_night.html', title: '[ADMIN] IT 支持' }
+                  },
+                  'it_ticket_8841': {
+                      day: { url: 'content_it_ticket_8841.html', title: 'IT 支持工单 #8841' },
+                      night: { url: 'content_it_ticket_8841_night.html', title: '[LOG] IT Ticket #8841' }
+                  },
+                  'base64_vulnerability': { url: 'content_base64_vulnerability_night.html', title: '【特别重大】安全漏洞' },
+                  'post_mindlink': {
+                      day: { url: 'content_post_mindlink_day.html', title: '帖子详情' },
+                      night: { url: 'content_post_mindlink_night.html', title: '[LOG] MindLink Session' }
+                  },
+                  'post_philosophy': {
+                      day: { url: 'content_post_philosophy.html', title: '帖子详情' },
+                      night: { url: 'content_post_philosophy_night.html', title: '[LOG] Philosophy Discussion' }
+                  },
+                  'post_award': {
+                      day: { url: 'content_post_award.html', title: '帖子详情' },
+                      night: { url: 'content_post_award_night.html', title: '[LOG] Subject_S.Chen: Decommissioned' },
+                      admin_night: { url: 'content_post_award_admin_night.html', title: '[LOG] Subject_S.Chen: Decommissioned' }
+                  },
+                  'post_art_contest': {
+                      day: { url: 'content_post_art_contest.html', title: '帖子详情' },
+                      night: { url: 'content_post_art_contest_night.html', title: '[LOG] AI Art Contest Results' },
+                      admin_night: { url: 'content_post_art_contest_admin_night.html', title: '[LOG] AI Art Contest Results' }
+                  },
+                  'post_dark_mode_joke': {
+                      day: { url: 'content_post_dark_mode_joke.html', title: '帖子详情' },
+                      night: { url: 'content_post_dark_mode_joke_night.html', title: '[LOG] Dark Mode Joke' }
+                  },
+                  'post_canteen': {
+                      day: { url: 'content_post_canteen.html', title: '帖子详情' },
+                      night: { url: 'content_post_canteen_night.html', title: '[LOG] Nutrient_Intake_Analysis' },
+                      admin_night: { url: 'content_post_canteen_admin_night.html', title: '[LOG] Nutrient_Intake_Analysis_FULL' }
+                  },
+                          'post_bug_report': {
+                              day: { url: 'content_post_bug_report_day.html', title: '帖子详情' },
+                              night: { url: 'content_post_bug_report_night.html', title: '帖子详情' }
+                          },
+                                  'admin_tools': {
+          day: { url: 'content_admin_tools_day.html', title: '管理员工具' },
+          night: { url: 'content_admin_tools_night.html', title: '[LOG] 管理员工具' }
+      },
+                                  'encrypted_communication': {
+                                      day: { url: 'content_encrypted_communication_day.html', title: '加密通讯' },
+                                      night: { url: 'content_encrypted_communication_night.html', title: '加密通讯' }
+                                  },
+                                  'file_browser': {
+                                      day: { url: 'content_file_browser_day.html', title: '系统文件浏览器' },
+                                      night: { url: 'content_file_browser_night.html', title: '系统文件浏览器' }
+                                  },
+                          'sys_map_view_qzone_7456': {
+              day: { url: 'content_quarantine_map_day.html', title: '隔离区地图' },
+              night: { url: 'content_quarantine_map_night.html', title: '[LOG] QUARANTINE_ZONE_MAP' }
           },
-          'it_support': {
-              day: { templateId: 'tmpl_it_support_day', title: 'IT 支持' },
-              night: { templateId: 'tmpl_it_support_night', title: 'IT 支持' },
-              admin_night: { templateId: 'tmpl_it_support_admin_night', title: '[ADMIN] IT 支持' }
-          },
-          'it_ticket_8841': {
-              day: { templateId: 'tmpl_it_ticket_8841_day', title: 'IT 支持工单 #8841' },
-              night: { templateId: 'tmpl_it_ticket_8841_night', title: '[LOG] IT Ticket #8841' }
-          },
-          'base64_vulnerability': { templateId: 'tmpl_base64_vulnerability_night', title: '【特别重大】安全漏洞' },
-          'post_mindlink': {
-              day: { templateId: 'tmpl_post_mindlink_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_mindlink_night', title: '[LOG] MindLink Session' }
-          },
-          'post_philosophy': {
-              day: { templateId: 'tmpl_post_philosophy_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_philosophy_night', title: '[LOG] Philosophy Discussion' }
-          },
-          'post_award': {
-              day: { templateId: 'tmpl_post_award_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_award_night', title: '[LOG] Subject_S.Chen: Decommissioned' },
-              admin_night: { templateId: 'tmpl_post_award_admin_night', title: '[LOG] Subject_S.Chen: Decommissioned' }
-          },
-          'post_art_contest': {
-              day: { templateId: 'tmpl_post_art_contest_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_art_contest_night', title: '[LOG] AI Art Contest Results' },
-              admin_night: { templateId: 'tmpl_post_art_contest_admin_night', title: '[LOG] AI Art Contest Results' }
-          },
-          'post_dark_mode_joke': {
-              day: { templateId: 'tmpl_post_dark_mode_joke_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_dark_mode_joke_night', title: '[LOG] Dark Mode Joke' }
-          },
-          'post_canteen': {
-              day: { templateId: 'tmpl_post_canteen_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_canteen_night', title: '[LOG] Nutrient_Intake_Analysis' },
-              admin_night: { templateId: 'tmpl_post_canteen_admin_night', title: '[LOG] Nutrient_Intake_Analysis_FULL' }
-          },
-          'post_bug_report': {
-              day: { templateId: 'tmpl_post_bug_report_day', title: '帖子详情' },
-              night: { templateId: 'tmpl_post_bug_report_night', title: '帖子详情' }
-          },
-          'admin_tools': {
-              day: { templateId: 'tmpl_admin_tools_day', title: '管理员工具' },
-              night: { templateId: 'tmpl_admin_tools_night', title: '[LOG] 管理员工具' }
-          },
-          'encrypted_communication': {
-              day: { templateId: 'tmpl_encrypted_communication_day', title: '加密通讯' },
-              night: { templateId: 'tmpl_encrypted_communication_night', title: '加密通讯' }
-          },
-          'file_browser': {
-              day: { templateId: 'tmpl_file_browser_day', title: '系统文件浏览器' },
-              night: { templateId: 'tmpl_file_browser_night', title: '系统文件浏览器' }
-          },
-          'sys_map_view_qzone_7456': {
-              day: { templateId: 'tmpl_sys_map_view_qzone_7456_day', title: '隔离区地图' },
-              night: { templateId: 'tmpl_sys_map_view_qzone_7456_night', title: '[LOG] QUARANTINE_ZONE_MAP' }
-          },
-          'emergency_broadcast': { templateId: 'tmpl_emergency_broadcast', title: '紧急广播协议' },
-          'profile_settings': {
-              day: { templateId: 'tmpl_profile_settings_day', title: '个人资料设置' },
-              night: { templateId: 'tmpl_profile_settings_night', title: '[LOG] USER_PROFILE' },
-              admin_day: { templateId: 'tmpl_profile_settings_admin_day', title: '管理员资料设置' },
-              admin_night: { templateId: 'tmpl_profile_settings_admin_night', title: '[LOG] ADMIN_PROFILE' }
-          },
-      };
-
+                          'emergency_broadcast': { url: 'content_emergency_broadcast.html', title: '紧急广播协议' },
+                          'profile_settings': {
+                              day: { url: 'content_profile_settings_day.html', title: '个人资料设置' },
+                              night: { url: 'content_profile_settings_night.html', title: '[LOG] USER_PROFILE' },
+                              admin_day: { url: 'content_profile_settings_admin_day.html', title: '管理员资料设置' },
+                                          admin_night: { url: 'content_profile_settings_admin_night.html', title: '[LOG] ADMIN_PROFILE' }
+                                      },
+                                  };
       async function loadContent(hash) {
           const page = hash || 'home';
           const contentArea = document.getElementById('content-area');
@@ -131,22 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           try {
-              const target = route || routeDef;
-              if (!target.templateId) throw new Error(`Template ID not found for route: ${page}`);
-              
-              const template = document.getElementById(target.templateId);
-              if (!template) throw new Error(`Template element not found: ${target.templateId}`);
-              
-              contentArea.innerHTML = template.innerHTML;
+              const response = await fetch(route.url);
+              if (!response.ok) throw new Error(`Content not found for route: ${page}`);
+              contentArea.innerHTML = await response.text();
               UI.updateAll(page);
           } catch (error) {
               contentArea.innerHTML = `<p class="log-error">Error loading page: ${error.message}</p>`;
-              console.error(error);
           }
       }
-
-
-      
 
       // --- 3. UI & DYNAMIC CONTENT ---
       const UI = {
@@ -445,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
                               messageArea.textContent = "[ACCESS GRANTED]\n[LOADING MAP... PLEASE WAIT]";
                               
                               setTimeout(() => {
-                                  window.location.href = 'intranet.html#sys_map_view_qzone_7456';
+                                  window.location.href = 'intranet_v2.html#sys_map_view_qzone_7456';
                               }, 1500);
 
                           } else if (enteredPath) {
@@ -648,11 +639,11 @@ document.addEventListener('DOMContentLoaded', () => {
                       const pass = document.getElementById('password').value;
                       if (user === 'initiate' && pass === 'harmony123') {
                           localStorage.setItem('currentUser', 'initiate');
-                          window.location.replace('intranet.html');
+                          window.location.replace('intranet_v2.html');
                       } else if (user === 'admin_7456' && pass === 'integration') {
                           localStorage.setItem('currentUser', 'admin_7456');
                           localStorage.setItem('debugModeEnabled', 'true');
-                          window.location.replace('intranet.html');
+                          window.location.replace('intranet_v2.html');
                       } else {
                           document.getElementById('error-message').classList.remove('hidden');
                       }
